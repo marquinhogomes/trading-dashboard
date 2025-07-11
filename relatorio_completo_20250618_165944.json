@@ -1,0 +1,1855 @@
+{
+  "sistema": "Sistema Integrado Completo - Wall Street Level",
+  "versao": "5.5 Complete",
+  "timestamp_relatorio": "2025-06-18T16:59:44.337079",
+  "resumo_execucao": {
+    "duracao_total": "0:14:59.539940",
+    "execucoes_realizadas": 0,
+    "pares_processados": 0,
+    "ordens_enviadas": 0,
+    "status_final": "Parando Sistema Completo"
+  },
+  "metricas_performance": {
+    "total_trades": 0,
+    "winning_trades": 0,
+    "losing_trades": 0,
+    "total_pnl": 0.0,
+    "max_drawdown": 0.0,
+    "sharpe_ratio": 0.0,
+    "win_rate": 0.0,
+    "profit_factor": 0.0,
+    "avg_trade_duration": "4:00:00"
+  },
+  "resumo_alertas": {
+    "total_alertas": 8,
+    "alertas_criticos": 0,
+    "alertas_ativos": 8,
+    "alertas_reconhecidos": 0
+  },
+  "configuracao_final": {
+    "timeframe": "H1",
+    "period": 100,
+    "zscore_threshold": 2.0,
+    "max_positions": 6,
+    "risk_per_trade": 0.02,
+    "stop_loss": 0.05,
+    "take_profit": 0.1,
+    "enable_cointegration": true,
+    "enable_volatility_filter": true,
+    "enable_ai_analysis": true,
+    "enable_sector_analysis": true,
+    "min_volume": 1000000,
+    "max_spread": 0.01,
+    "min_confidence": 0.7,
+    "auto_refresh": true,
+    "refresh_interval": 30,
+    "auto_backup": true,
+    "backup_interval": 3600,
+    "enable_alerts": true,
+    "email_alerts": false,
+    "sound_alerts": true,
+    "auto_export": true,
+    "export_format": "json",
+    "export_interval": 1800,
+    "use_ai_predictions": true,
+    "auto_optimization": false,
+    "optimization_frequency": "weekly"
+  },
+  "estatisticas_logs": {
+    "total_logs": 213,
+    "logs_por_nivel": {
+      "INFO": 173,
+      "WARNING": 17,
+      "ERROR": 0,
+      "CRITICAL": 0,
+      "SUCCESS": 23
+    }
+  },
+  "posicoes_final": {
+    "posicoes_ativas_final": 0,
+    "detalhes_posicoes": []
+  },
+  "cache_analysis": {},
+  "log_completo": [
+    "[2025-06-18 16:44:44] [INFO] Sistema Integrado Completo inicializado com funcionalidades avançadas",
+    "[2025-06-18 16:44:44] [SUCCESS] 🎯 INICIANDO SISTEMA INTEGRADO COMPLETO - WALL STREET LEVEL",
+    "[2025-06-18 16:44:44] [INFO] ================================================================================",
+    "[2025-06-18 16:44:44] [INFO] Este sistema inclui TODAS as funcionalidades avançadas:",
+    "[2025-06-18 16:44:44] [SUCCESS] ✅ Sistema original calculo_entradas_v55.py",
+    "[2025-06-18 16:44:44] [SUCCESS] ✅ Análise avançada com IA e estatísticas",
+    "[2025-06-18 16:44:44] [SUCCESS] ✅ Gestão avançada de risco e portfolio",
+    "[2025-06-18 16:44:44] [SUCCESS] ✅ Sistema de alertas inteligente",
+    "[2025-06-18 16:44:44] [SUCCESS] ✅ Backup e exportação automática",
+    "[2025-06-18 16:44:44] [SUCCESS] ✅ Otimização automática de parâmetros",
+    "[2025-06-18 16:44:44] [SUCCESS] ✅ Monitoramento avançado de sistema",
+    "[2025-06-18 16:44:44] [SUCCESS] ✅ Análise de performance em tempo real",
+    "[2025-06-18 16:44:44] [SUCCESS] ✅ Logs estruturados e categorizados",
+    "[2025-06-18 16:44:44] [SUCCESS] ✅ Recuperação automática de falhas",
+    "[2025-06-18 16:44:44] [SUCCESS] ✅ Parada de emergência com backup",
+    "[2025-06-18 16:44:44] [INFO] ================================================================================",
+    "[2025-06-18 16:44:44] [INFO] INICIANDO: Sistema Original de Trading com funcionalidades avançadas",
+    "[2025-06-18 16:44:44] [INFO] 📊 INICIANDO: Thread de monitoramento avançado",
+    "[2025-06-18 16:44:44] [SUCCESS] ✅ Threads iniciadas - Sistema Completo operacional!",
+    "[2025-06-18 16:44:44] [INFO] 📋 RELATÓRIO DE MONITORAMENTO AVANÇADO:",
+    "[2025-06-18 16:44:44] [INFO]    ⚡ Execuções: 0",
+    "[2025-06-18 16:44:44] [INFO]    📈 Pares processados: 0",
+    "[2025-06-18 16:44:44] [SUCCESS] ✅ Arquivo lido com encoding: utf-8",
+    "[2025-06-18 16:44:44] [INFO]    📝 Ordens enviadas: 0",
+    "[2025-06-18 16:44:44] [INFO]    💼 Posições ativas: 0",
+    "[2025-06-18 16:44:44] [INFO]    🚨 Alertas ativos: 0",
+    "[2025-06-18 16:44:44] [INFO] 💡 Funcionalidades disponíveis:",
+    "[2025-06-18 16:44:44] [INFO]    🔄 Status: Iniciando Sistema Completo",
+    "[2025-06-18 16:44:44] [INFO]    🎛️ Controle: Ctrl+C para parar, 'EMERGENCY' para parada crítica",
+    "[2025-06-18 16:44:44] [INFO] 📊 MÉTRICAS DE PERFORMANCE:",
+    "[2025-06-18 16:44:44] [INFO]    📊 Dashboard: Use trading_dashboard_complete.py para interface visual",
+    "[2025-06-18 16:44:44] [INFO]    📊 total_trades: 0",
+    "[2025-06-18 16:44:44] [INFO]    📊 winning_trades: 0",
+    "[2025-06-18 16:44:44] [INFO]    📊 losing_trades: 0",
+    "[2025-06-18 16:44:44] [INFO]    💰 total_pnl: 0.00",
+    "[2025-06-18 16:44:44] [INFO]    💰 max_drawdown: 0.00",
+    "[2025-06-18 16:44:44] [INFO]    📈 sharpe_ratio: 0.00%",
+    "[2025-06-18 16:44:44] [INFO]    🔧 Config: Edite parâmetros em tempo real",
+    "[2025-06-18 16:44:44] [INFO]    📤 Export: Dados exportados automaticamente",
+    "[2025-06-18 16:44:44] [INFO]    🚨 Alerts: Sistema de alertas ativo",
+    "[2025-06-18 16:44:44] [INFO]    📈 win_rate: 0.00%",
+    "[2025-06-18 16:44:44] [INFO]    💰 profit_factor: 0.00",
+    "[2025-06-18 16:44:44] [INFO]    📊 avg_trade_duration: 4:00:00",
+    "[2025-06-18 16:44:44] [INFO]    🔌 Conexão MT5: ❌ Desconectado",
+    "[2025-06-18 16:44:44] [SUCCESS]    💚 Saúde do sistema: EXCELENTE (100%)",
+    "[2025-06-18 16:44:44] [INFO]    💻 CPU: 0.0%",
+    "[2025-06-18 16:44:44] [INFO]    🧠 Memória: 72.5%",
+    "[2025-06-18 16:44:44] [WARNING]    💾 Disco cheio: 94.8%",
+    "[2025-06-18 16:44:44] [WARNING] ALERT [RESOURCE]: Disco cheio: 94.8%",
+    "[2025-06-18 16:46:44] [INFO] 📋 RELATÓRIO DE MONITORAMENTO AVANÇADO:",
+    "[2025-06-18 16:46:44] [INFO]    ⚡ Execuções: 0",
+    "[2025-06-18 16:46:44] [INFO]    📈 Pares processados: 0",
+    "[2025-06-18 16:46:44] [INFO]    📝 Ordens enviadas: 0",
+    "[2025-06-18 16:46:44] [INFO]    💼 Posições ativas: 0",
+    "[2025-06-18 16:46:44] [INFO]    🚨 Alertas ativos: 1",
+    "[2025-06-18 16:46:44] [INFO]    🔄 Status: Iniciando Sistema Completo",
+    "[2025-06-18 16:46:44] [INFO] 📊 MÉTRICAS DE PERFORMANCE:",
+    "[2025-06-18 16:46:44] [INFO]    📊 total_trades: 0",
+    "[2025-06-18 16:46:44] [INFO]    📊 winning_trades: 0",
+    "[2025-06-18 16:46:44] [INFO]    📊 losing_trades: 0",
+    "[2025-06-18 16:46:44] [INFO]    💰 total_pnl: 0.00",
+    "[2025-06-18 16:46:44] [INFO]    💰 max_drawdown: 0.00",
+    "[2025-06-18 16:46:44] [INFO]    📈 sharpe_ratio: 0.00%",
+    "[2025-06-18 16:46:44] [INFO]    📈 win_rate: 0.00%",
+    "[2025-06-18 16:46:44] [INFO]    💰 profit_factor: 0.00",
+    "[2025-06-18 16:46:44] [INFO]    📊 avg_trade_duration: 4:00:00",
+    "[2025-06-18 16:46:44] [INFO]    🔌 Conexão MT5: ❌ Desconectado",
+    "[2025-06-18 16:46:44] [SUCCESS]    💚 Saúde do sistema: EXCELENTE (100%)",
+    "[2025-06-18 16:46:44] [INFO]    💻 CPU: 5.8%",
+    "[2025-06-18 16:46:44] [INFO]    🧠 Memória: 73.0%",
+    "[2025-06-18 16:46:44] [WARNING]    💾 Disco cheio: 94.8%",
+    "[2025-06-18 16:46:44] [WARNING] ALERT [RESOURCE]: Disco cheio: 94.8%",
+    "[2025-06-18 16:48:44] [INFO] 📋 RELATÓRIO DE MONITORAMENTO AVANÇADO:",
+    "[2025-06-18 16:48:44] [INFO]    ⚡ Execuções: 0",
+    "[2025-06-18 16:48:44] [INFO]    📈 Pares processados: 0",
+    "[2025-06-18 16:48:44] [INFO]    📝 Ordens enviadas: 0",
+    "[2025-06-18 16:48:45] [INFO]    💼 Posições ativas: 0",
+    "[2025-06-18 16:48:45] [INFO]    🚨 Alertas ativos: 2",
+    "[2025-06-18 16:48:45] [INFO]    🔄 Status: Iniciando Sistema Completo",
+    "[2025-06-18 16:48:45] [INFO] 📊 MÉTRICAS DE PERFORMANCE:",
+    "[2025-06-18 16:48:45] [INFO]    📊 total_trades: 0",
+    "[2025-06-18 16:48:45] [INFO]    📊 winning_trades: 0",
+    "[2025-06-18 16:48:45] [INFO]    📊 losing_trades: 0",
+    "[2025-06-18 16:48:45] [INFO]    💰 total_pnl: 0.00",
+    "[2025-06-18 16:48:45] [INFO]    💰 max_drawdown: 0.00",
+    "[2025-06-18 16:48:45] [INFO]    📈 sharpe_ratio: 0.00%",
+    "[2025-06-18 16:48:45] [INFO]    📈 win_rate: 0.00%",
+    "[2025-06-18 16:48:45] [INFO]    💰 profit_factor: 0.00",
+    "[2025-06-18 16:48:45] [INFO]    📊 avg_trade_duration: 4:00:00",
+    "[2025-06-18 16:48:45] [INFO]    🔌 Conexão MT5: ❌ Desconectado",
+    "[2025-06-18 16:48:45] [SUCCESS]    💚 Saúde do sistema: EXCELENTE (100%)",
+    "[2025-06-18 16:48:45] [INFO]    💻 CPU: 4.5%",
+    "[2025-06-18 16:48:45] [INFO]    🧠 Memória: 73.8%",
+    "[2025-06-18 16:48:45] [WARNING]    💾 Disco cheio: 94.8%",
+    "[2025-06-18 16:48:45] [WARNING] ALERT [RESOURCE]: Disco cheio: 94.8%",
+    "[2025-06-18 16:50:45] [INFO] 📋 RELATÓRIO DE MONITORAMENTO AVANÇADO:",
+    "[2025-06-18 16:50:45] [INFO]    ⚡ Execuções: 0",
+    "[2025-06-18 16:50:45] [INFO]    📈 Pares processados: 0",
+    "[2025-06-18 16:50:45] [INFO]    📝 Ordens enviadas: 0",
+    "[2025-06-18 16:50:45] [INFO]    💼 Posições ativas: 0",
+    "[2025-06-18 16:50:45] [INFO]    🚨 Alertas ativos: 3",
+    "[2025-06-18 16:50:45] [INFO]    🔄 Status: Iniciando Sistema Completo",
+    "[2025-06-18 16:50:45] [INFO] 📊 MÉTRICAS DE PERFORMANCE:",
+    "[2025-06-18 16:50:45] [INFO]    📊 total_trades: 0",
+    "[2025-06-18 16:50:45] [INFO]    📊 winning_trades: 0",
+    "[2025-06-18 16:50:45] [INFO]    📊 losing_trades: 0",
+    "[2025-06-18 16:50:45] [INFO]    💰 total_pnl: 0.00",
+    "[2025-06-18 16:50:45] [INFO]    💰 max_drawdown: 0.00",
+    "[2025-06-18 16:50:45] [INFO]    📈 sharpe_ratio: 0.00%",
+    "[2025-06-18 16:50:45] [INFO]    📈 win_rate: 0.00%",
+    "[2025-06-18 16:50:45] [INFO]    💰 profit_factor: 0.00",
+    "[2025-06-18 16:50:45] [INFO]    📊 avg_trade_duration: 4:00:00",
+    "[2025-06-18 16:50:45] [INFO]    🔌 Conexão MT5: ❌ Desconectado",
+    "[2025-06-18 16:50:45] [SUCCESS]    💚 Saúde do sistema: EXCELENTE (100%)",
+    "[2025-06-18 16:50:45] [INFO]    💻 CPU: 3.6%",
+    "[2025-06-18 16:50:45] [INFO]    🧠 Memória: 74.1%",
+    "[2025-06-18 16:50:45] [WARNING]    💾 Disco cheio: 94.8%",
+    "[2025-06-18 16:50:45] [WARNING] ALERT [RESOURCE]: Disco cheio: 94.8%",
+    "[2025-06-18 16:52:45] [INFO] 📋 RELATÓRIO DE MONITORAMENTO AVANÇADO:",
+    "[2025-06-18 16:52:45] [INFO]    ⚡ Execuções: 0",
+    "[2025-06-18 16:52:45] [INFO]    📈 Pares processados: 0",
+    "[2025-06-18 16:52:45] [INFO]    📝 Ordens enviadas: 0",
+    "[2025-06-18 16:52:45] [INFO]    💼 Posições ativas: 0",
+    "[2025-06-18 16:52:45] [INFO]    🚨 Alertas ativos: 4",
+    "[2025-06-18 16:52:45] [INFO]    🔄 Status: Iniciando Sistema Completo",
+    "[2025-06-18 16:52:45] [INFO] 📊 MÉTRICAS DE PERFORMANCE:",
+    "[2025-06-18 16:52:45] [INFO]    📊 total_trades: 0",
+    "[2025-06-18 16:52:45] [INFO]    📊 winning_trades: 0",
+    "[2025-06-18 16:52:45] [INFO]    📊 losing_trades: 0",
+    "[2025-06-18 16:52:45] [INFO]    💰 total_pnl: 0.00",
+    "[2025-06-18 16:52:45] [INFO]    💰 max_drawdown: 0.00",
+    "[2025-06-18 16:52:45] [INFO]    📈 sharpe_ratio: 0.00%",
+    "[2025-06-18 16:52:45] [INFO]    📈 win_rate: 0.00%",
+    "[2025-06-18 16:52:45] [INFO]    💰 profit_factor: 0.00",
+    "[2025-06-18 16:52:45] [INFO]    📊 avg_trade_duration: 4:00:00",
+    "[2025-06-18 16:52:45] [INFO]    🔌 Conexão MT5: ❌ Desconectado",
+    "[2025-06-18 16:52:45] [SUCCESS]    💚 Saúde do sistema: EXCELENTE (100%)",
+    "[2025-06-18 16:52:45] [INFO]    💻 CPU: 5.2%",
+    "[2025-06-18 16:52:45] [INFO]    🧠 Memória: 74.2%",
+    "[2025-06-18 16:52:45] [WARNING]    💾 Disco cheio: 94.8%",
+    "[2025-06-18 16:52:45] [WARNING] ALERT [RESOURCE]: Disco cheio: 94.8%",
+    "[2025-06-18 16:54:45] [INFO] 📋 RELATÓRIO DE MONITORAMENTO AVANÇADO:",
+    "[2025-06-18 16:54:45] [INFO]    ⚡ Execuções: 0",
+    "[2025-06-18 16:54:45] [INFO]    📈 Pares processados: 0",
+    "[2025-06-18 16:54:45] [INFO]    📝 Ordens enviadas: 0",
+    "[2025-06-18 16:54:45] [INFO]    💼 Posições ativas: 0",
+    "[2025-06-18 16:54:45] [INFO]    🚨 Alertas ativos: 5",
+    "[2025-06-18 16:54:45] [INFO]    🔄 Status: Iniciando Sistema Completo",
+    "[2025-06-18 16:54:45] [INFO] 📊 MÉTRICAS DE PERFORMANCE:",
+    "[2025-06-18 16:54:45] [INFO]    📊 total_trades: 0",
+    "[2025-06-18 16:54:45] [INFO]    📊 winning_trades: 0",
+    "[2025-06-18 16:54:45] [INFO]    📊 losing_trades: 0",
+    "[2025-06-18 16:54:45] [INFO]    💰 total_pnl: 0.00",
+    "[2025-06-18 16:54:45] [INFO]    💰 max_drawdown: 0.00",
+    "[2025-06-18 16:54:45] [INFO]    📈 sharpe_ratio: 0.00%",
+    "[2025-06-18 16:54:45] [INFO]    📈 win_rate: 0.00%",
+    "[2025-06-18 16:54:45] [INFO]    💰 profit_factor: 0.00",
+    "[2025-06-18 16:54:45] [INFO]    📊 avg_trade_duration: 4:00:00",
+    "[2025-06-18 16:54:45] [INFO]    🔌 Conexão MT5: ❌ Desconectado",
+    "[2025-06-18 16:54:45] [SUCCESS]    💚 Saúde do sistema: EXCELENTE (100%)",
+    "[2025-06-18 16:54:45] [INFO]    💻 CPU: 4.6%",
+    "[2025-06-18 16:54:45] [INFO]    🧠 Memória: 74.5%",
+    "[2025-06-18 16:54:45] [WARNING]    💾 Disco cheio: 94.8%",
+    "[2025-06-18 16:54:45] [WARNING] ALERT [RESOURCE]: Disco cheio: 94.8%",
+    "[2025-06-18 16:56:45] [INFO] 📋 RELATÓRIO DE MONITORAMENTO AVANÇADO:",
+    "[2025-06-18 16:56:45] [INFO]    ⚡ Execuções: 0",
+    "[2025-06-18 16:56:45] [INFO]    📈 Pares processados: 0",
+    "[2025-06-18 16:56:45] [INFO]    📝 Ordens enviadas: 0",
+    "[2025-06-18 16:56:45] [INFO]    💼 Posições ativas: 0",
+    "[2025-06-18 16:56:45] [INFO]    🚨 Alertas ativos: 6",
+    "[2025-06-18 16:56:45] [INFO]    🔄 Status: Iniciando Sistema Completo",
+    "[2025-06-18 16:56:45] [INFO] 📊 MÉTRICAS DE PERFORMANCE:",
+    "[2025-06-18 16:56:45] [INFO]    📊 total_trades: 0",
+    "[2025-06-18 16:56:45] [INFO]    📊 winning_trades: 0",
+    "[2025-06-18 16:56:45] [INFO]    📊 losing_trades: 0",
+    "[2025-06-18 16:56:45] [INFO]    💰 total_pnl: 0.00",
+    "[2025-06-18 16:56:45] [INFO]    💰 max_drawdown: 0.00",
+    "[2025-06-18 16:56:45] [INFO]    📈 sharpe_ratio: 0.00%",
+    "[2025-06-18 16:56:45] [INFO]    📈 win_rate: 0.00%",
+    "[2025-06-18 16:56:45] [INFO]    💰 profit_factor: 0.00",
+    "[2025-06-18 16:56:45] [INFO]    📊 avg_trade_duration: 4:00:00",
+    "[2025-06-18 16:56:45] [INFO]    🔌 Conexão MT5: ❌ Desconectado",
+    "[2025-06-18 16:56:45] [SUCCESS]    💚 Saúde do sistema: EXCELENTE (100%)",
+    "[2025-06-18 16:56:45] [INFO]    💻 CPU: 4.2%",
+    "[2025-06-18 16:56:45] [INFO]    🧠 Memória: 74.6%",
+    "[2025-06-18 16:56:45] [WARNING]    💾 Disco cheio: 94.8%",
+    "[2025-06-18 16:56:45] [WARNING] ALERT [RESOURCE]: Disco cheio: 94.8%",
+    "[2025-06-18 16:58:45] [INFO] 📋 RELATÓRIO DE MONITORAMENTO AVANÇADO:",
+    "[2025-06-18 16:58:45] [INFO]    ⚡ Execuções: 0",
+    "[2025-06-18 16:58:45] [INFO]    📈 Pares processados: 0",
+    "[2025-06-18 16:58:45] [INFO]    📝 Ordens enviadas: 0",
+    "[2025-06-18 16:58:45] [INFO]    💼 Posições ativas: 0",
+    "[2025-06-18 16:58:45] [INFO]    🚨 Alertas ativos: 7",
+    "[2025-06-18 16:58:45] [INFO]    🔄 Status: Iniciando Sistema Completo",
+    "[2025-06-18 16:58:45] [INFO] 📊 MÉTRICAS DE PERFORMANCE:",
+    "[2025-06-18 16:58:45] [INFO]    📊 total_trades: 0",
+    "[2025-06-18 16:58:45] [INFO]    📊 winning_trades: 0",
+    "[2025-06-18 16:58:45] [INFO]    📊 losing_trades: 0",
+    "[2025-06-18 16:58:45] [INFO]    💰 total_pnl: 0.00",
+    "[2025-06-18 16:58:45] [INFO]    💰 max_drawdown: 0.00",
+    "[2025-06-18 16:58:45] [INFO]    📈 sharpe_ratio: 0.00%",
+    "[2025-06-18 16:58:45] [INFO]    📈 win_rate: 0.00%",
+    "[2025-06-18 16:58:45] [INFO]    💰 profit_factor: 0.00",
+    "[2025-06-18 16:58:45] [INFO]    📊 avg_trade_duration: 4:00:00",
+    "[2025-06-18 16:58:45] [INFO]    🔌 Conexão MT5: ❌ Desconectado",
+    "[2025-06-18 16:58:45] [SUCCESS]    💚 Saúde do sistema: EXCELENTE (100%)",
+    "[2025-06-18 16:58:45] [INFO]    💻 CPU: 8.7%",
+    "[2025-06-18 16:58:45] [INFO]    🧠 Memória: 74.9%",
+    "[2025-06-18 16:58:45] [WARNING]    💾 Disco cheio: 94.8%",
+    "[2025-06-18 16:58:45] [WARNING] ALERT [RESOURCE]: Disco cheio: 94.8%",
+    "[2025-06-18 16:59:44] [WARNING] 🛑 INTERRUPÇÃO: Parando sistema...",
+    "[2025-06-18 16:59:44] [INFO] 🛑 Parando sistema completo...",
+    "[2025-06-18 16:59:44] [SUCCESS] 💾 Backup automático salvo: backup_sistema_20250618_165944.json"
+  ],
+  "log_estruturado": [
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "Sistema Integrado Completo inicializado com funcionalidades avançadas",
+      "thread": "MainThread",
+      "function": "__init__"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "SUCCESS",
+      "message": "🎯 INICIANDO SISTEMA INTEGRADO COMPLETO - WALL STREET LEVEL",
+      "thread": "MainThread",
+      "function": "iniciar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "================================================================================",
+      "thread": "MainThread",
+      "function": "iniciar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "Este sistema inclui TODAS as funcionalidades avançadas:",
+      "thread": "MainThread",
+      "function": "iniciar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "SUCCESS",
+      "message": "✅ Sistema original calculo_entradas_v55.py",
+      "thread": "MainThread",
+      "function": "iniciar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "SUCCESS",
+      "message": "✅ Análise avançada com IA e estatísticas",
+      "thread": "MainThread",
+      "function": "iniciar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "SUCCESS",
+      "message": "✅ Gestão avançada de risco e portfolio",
+      "thread": "MainThread",
+      "function": "iniciar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "SUCCESS",
+      "message": "✅ Sistema de alertas inteligente",
+      "thread": "MainThread",
+      "function": "iniciar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "SUCCESS",
+      "message": "✅ Backup e exportação automática",
+      "thread": "MainThread",
+      "function": "iniciar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "SUCCESS",
+      "message": "✅ Otimização automática de parâmetros",
+      "thread": "MainThread",
+      "function": "iniciar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "SUCCESS",
+      "message": "✅ Monitoramento avançado de sistema",
+      "thread": "MainThread",
+      "function": "iniciar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "SUCCESS",
+      "message": "✅ Análise de performance em tempo real",
+      "thread": "MainThread",
+      "function": "iniciar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "SUCCESS",
+      "message": "✅ Logs estruturados e categorizados",
+      "thread": "MainThread",
+      "function": "iniciar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "SUCCESS",
+      "message": "✅ Recuperação automática de falhas",
+      "thread": "MainThread",
+      "function": "iniciar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "SUCCESS",
+      "message": "✅ Parada de emergência com backup",
+      "thread": "MainThread",
+      "function": "iniciar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "================================================================================",
+      "thread": "MainThread",
+      "function": "iniciar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "INICIANDO: Sistema Original de Trading com funcionalidades avançadas",
+      "thread": "SistemaTradingCompleto",
+      "function": "executar_sistema_original"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "📊 INICIANDO: Thread de monitoramento avançado",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "📋 RELATÓRIO DE MONITORAMENTO AVANÇADO:",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "   ⚡ Execuções: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "   📈 Pares processados: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "   📝 Ordens enviadas: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "   💼 Posições ativas: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "SUCCESS",
+      "message": "✅ Threads iniciadas - Sistema Completo operacional!",
+      "thread": "MainThread",
+      "function": "iniciar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "   🚨 Alertas ativos: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "💡 Funcionalidades disponíveis:",
+      "thread": "MainThread",
+      "function": "iniciar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "   🔄 Status: Iniciando Sistema Completo",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "   🎛️ Controle: Ctrl+C para parar, 'EMERGENCY' para parada crítica",
+      "thread": "MainThread",
+      "function": "iniciar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "📊 MÉTRICAS DE PERFORMANCE:",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "SUCCESS",
+      "message": "✅ Arquivo lido com encoding: utf-8",
+      "thread": "SistemaTradingCompleto",
+      "function": "_load_original_code"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "   📊 total_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "   📊 winning_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "   📊 losing_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "   💰 total_pnl: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "   💰 max_drawdown: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "   📊 Dashboard: Use trading_dashboard_complete.py para interface visual",
+      "thread": "MainThread",
+      "function": "iniciar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "   🔧 Config: Edite parâmetros em tempo real",
+      "thread": "MainThread",
+      "function": "iniciar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "   📤 Export: Dados exportados automaticamente",
+      "thread": "MainThread",
+      "function": "iniciar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "   🚨 Alerts: Sistema de alertas ativo",
+      "thread": "MainThread",
+      "function": "iniciar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "   📈 sharpe_ratio: 0.00%",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "   📈 win_rate: 0.00%",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "   💰 profit_factor: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "   📊 avg_trade_duration: 4:00:00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "   🔌 Conexão MT5: ❌ Desconectado",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "SUCCESS",
+      "message": "   💚 Saúde do sistema: EXCELENTE (100%)",
+      "thread": "MonitoramentoAvancado",
+      "function": "_verificar_saude_sistema"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "   💻 CPU: 0.0%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "INFO",
+      "message": "   🧠 Memória: 72.5%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "WARNING",
+      "message": "   💾 Disco cheio: 94.8%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:44:44",
+      "level": "WARNING",
+      "message": "ALERT [RESOURCE]: Disco cheio: 94.8%",
+      "thread": "MonitoramentoAvancado",
+      "function": "add_alert"
+    },
+    {
+      "timestamp": "2025-06-18 16:46:44",
+      "level": "INFO",
+      "message": "📋 RELATÓRIO DE MONITORAMENTO AVANÇADO:",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:46:44",
+      "level": "INFO",
+      "message": "   ⚡ Execuções: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:46:44",
+      "level": "INFO",
+      "message": "   📈 Pares processados: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:46:44",
+      "level": "INFO",
+      "message": "   📝 Ordens enviadas: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:46:44",
+      "level": "INFO",
+      "message": "   💼 Posições ativas: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:46:44",
+      "level": "INFO",
+      "message": "   🚨 Alertas ativos: 1",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:46:44",
+      "level": "INFO",
+      "message": "   🔄 Status: Iniciando Sistema Completo",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:46:44",
+      "level": "INFO",
+      "message": "📊 MÉTRICAS DE PERFORMANCE:",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:46:44",
+      "level": "INFO",
+      "message": "   📊 total_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:46:44",
+      "level": "INFO",
+      "message": "   📊 winning_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:46:44",
+      "level": "INFO",
+      "message": "   📊 losing_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:46:44",
+      "level": "INFO",
+      "message": "   💰 total_pnl: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:46:44",
+      "level": "INFO",
+      "message": "   💰 max_drawdown: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:46:44",
+      "level": "INFO",
+      "message": "   📈 sharpe_ratio: 0.00%",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:46:44",
+      "level": "INFO",
+      "message": "   📈 win_rate: 0.00%",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:46:44",
+      "level": "INFO",
+      "message": "   💰 profit_factor: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:46:44",
+      "level": "INFO",
+      "message": "   📊 avg_trade_duration: 4:00:00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:46:44",
+      "level": "INFO",
+      "message": "   🔌 Conexão MT5: ❌ Desconectado",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:46:44",
+      "level": "SUCCESS",
+      "message": "   💚 Saúde do sistema: EXCELENTE (100%)",
+      "thread": "MonitoramentoAvancado",
+      "function": "_verificar_saude_sistema"
+    },
+    {
+      "timestamp": "2025-06-18 16:46:44",
+      "level": "INFO",
+      "message": "   💻 CPU: 5.8%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:46:44",
+      "level": "INFO",
+      "message": "   🧠 Memória: 73.0%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:46:44",
+      "level": "WARNING",
+      "message": "   💾 Disco cheio: 94.8%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:46:44",
+      "level": "WARNING",
+      "message": "ALERT [RESOURCE]: Disco cheio: 94.8%",
+      "thread": "MonitoramentoAvancado",
+      "function": "add_alert"
+    },
+    {
+      "timestamp": "2025-06-18 16:48:44",
+      "level": "INFO",
+      "message": "📋 RELATÓRIO DE MONITORAMENTO AVANÇADO:",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:48:44",
+      "level": "INFO",
+      "message": "   ⚡ Execuções: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:48:44",
+      "level": "INFO",
+      "message": "   📈 Pares processados: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:48:44",
+      "level": "INFO",
+      "message": "   📝 Ordens enviadas: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:48:45",
+      "level": "INFO",
+      "message": "   💼 Posições ativas: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:48:45",
+      "level": "INFO",
+      "message": "   🚨 Alertas ativos: 2",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:48:45",
+      "level": "INFO",
+      "message": "   🔄 Status: Iniciando Sistema Completo",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:48:45",
+      "level": "INFO",
+      "message": "📊 MÉTRICAS DE PERFORMANCE:",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:48:45",
+      "level": "INFO",
+      "message": "   📊 total_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:48:45",
+      "level": "INFO",
+      "message": "   📊 winning_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:48:45",
+      "level": "INFO",
+      "message": "   📊 losing_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:48:45",
+      "level": "INFO",
+      "message": "   💰 total_pnl: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:48:45",
+      "level": "INFO",
+      "message": "   💰 max_drawdown: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:48:45",
+      "level": "INFO",
+      "message": "   📈 sharpe_ratio: 0.00%",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:48:45",
+      "level": "INFO",
+      "message": "   📈 win_rate: 0.00%",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:48:45",
+      "level": "INFO",
+      "message": "   💰 profit_factor: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:48:45",
+      "level": "INFO",
+      "message": "   📊 avg_trade_duration: 4:00:00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:48:45",
+      "level": "INFO",
+      "message": "   🔌 Conexão MT5: ❌ Desconectado",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:48:45",
+      "level": "SUCCESS",
+      "message": "   💚 Saúde do sistema: EXCELENTE (100%)",
+      "thread": "MonitoramentoAvancado",
+      "function": "_verificar_saude_sistema"
+    },
+    {
+      "timestamp": "2025-06-18 16:48:45",
+      "level": "INFO",
+      "message": "   💻 CPU: 4.5%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:48:45",
+      "level": "INFO",
+      "message": "   🧠 Memória: 73.8%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:48:45",
+      "level": "WARNING",
+      "message": "   💾 Disco cheio: 94.8%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:48:45",
+      "level": "WARNING",
+      "message": "ALERT [RESOURCE]: Disco cheio: 94.8%",
+      "thread": "MonitoramentoAvancado",
+      "function": "add_alert"
+    },
+    {
+      "timestamp": "2025-06-18 16:50:45",
+      "level": "INFO",
+      "message": "📋 RELATÓRIO DE MONITORAMENTO AVANÇADO:",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:50:45",
+      "level": "INFO",
+      "message": "   ⚡ Execuções: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:50:45",
+      "level": "INFO",
+      "message": "   📈 Pares processados: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:50:45",
+      "level": "INFO",
+      "message": "   📝 Ordens enviadas: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:50:45",
+      "level": "INFO",
+      "message": "   💼 Posições ativas: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:50:45",
+      "level": "INFO",
+      "message": "   🚨 Alertas ativos: 3",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:50:45",
+      "level": "INFO",
+      "message": "   🔄 Status: Iniciando Sistema Completo",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:50:45",
+      "level": "INFO",
+      "message": "📊 MÉTRICAS DE PERFORMANCE:",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:50:45",
+      "level": "INFO",
+      "message": "   📊 total_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:50:45",
+      "level": "INFO",
+      "message": "   📊 winning_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:50:45",
+      "level": "INFO",
+      "message": "   📊 losing_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:50:45",
+      "level": "INFO",
+      "message": "   💰 total_pnl: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:50:45",
+      "level": "INFO",
+      "message": "   💰 max_drawdown: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:50:45",
+      "level": "INFO",
+      "message": "   📈 sharpe_ratio: 0.00%",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:50:45",
+      "level": "INFO",
+      "message": "   📈 win_rate: 0.00%",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:50:45",
+      "level": "INFO",
+      "message": "   💰 profit_factor: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:50:45",
+      "level": "INFO",
+      "message": "   📊 avg_trade_duration: 4:00:00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:50:45",
+      "level": "INFO",
+      "message": "   🔌 Conexão MT5: ❌ Desconectado",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:50:45",
+      "level": "SUCCESS",
+      "message": "   💚 Saúde do sistema: EXCELENTE (100%)",
+      "thread": "MonitoramentoAvancado",
+      "function": "_verificar_saude_sistema"
+    },
+    {
+      "timestamp": "2025-06-18 16:50:45",
+      "level": "INFO",
+      "message": "   💻 CPU: 3.6%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:50:45",
+      "level": "INFO",
+      "message": "   🧠 Memória: 74.1%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:50:45",
+      "level": "WARNING",
+      "message": "   💾 Disco cheio: 94.8%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:50:45",
+      "level": "WARNING",
+      "message": "ALERT [RESOURCE]: Disco cheio: 94.8%",
+      "thread": "MonitoramentoAvancado",
+      "function": "add_alert"
+    },
+    {
+      "timestamp": "2025-06-18 16:52:45",
+      "level": "INFO",
+      "message": "📋 RELATÓRIO DE MONITORAMENTO AVANÇADO:",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:52:45",
+      "level": "INFO",
+      "message": "   ⚡ Execuções: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:52:45",
+      "level": "INFO",
+      "message": "   📈 Pares processados: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:52:45",
+      "level": "INFO",
+      "message": "   📝 Ordens enviadas: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:52:45",
+      "level": "INFO",
+      "message": "   💼 Posições ativas: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:52:45",
+      "level": "INFO",
+      "message": "   🚨 Alertas ativos: 4",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:52:45",
+      "level": "INFO",
+      "message": "   🔄 Status: Iniciando Sistema Completo",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:52:45",
+      "level": "INFO",
+      "message": "📊 MÉTRICAS DE PERFORMANCE:",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:52:45",
+      "level": "INFO",
+      "message": "   📊 total_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:52:45",
+      "level": "INFO",
+      "message": "   📊 winning_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:52:45",
+      "level": "INFO",
+      "message": "   📊 losing_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:52:45",
+      "level": "INFO",
+      "message": "   💰 total_pnl: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:52:45",
+      "level": "INFO",
+      "message": "   💰 max_drawdown: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:52:45",
+      "level": "INFO",
+      "message": "   📈 sharpe_ratio: 0.00%",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:52:45",
+      "level": "INFO",
+      "message": "   📈 win_rate: 0.00%",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:52:45",
+      "level": "INFO",
+      "message": "   💰 profit_factor: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:52:45",
+      "level": "INFO",
+      "message": "   📊 avg_trade_duration: 4:00:00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:52:45",
+      "level": "INFO",
+      "message": "   🔌 Conexão MT5: ❌ Desconectado",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:52:45",
+      "level": "SUCCESS",
+      "message": "   💚 Saúde do sistema: EXCELENTE (100%)",
+      "thread": "MonitoramentoAvancado",
+      "function": "_verificar_saude_sistema"
+    },
+    {
+      "timestamp": "2025-06-18 16:52:45",
+      "level": "INFO",
+      "message": "   💻 CPU: 5.2%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:52:45",
+      "level": "INFO",
+      "message": "   🧠 Memória: 74.2%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:52:45",
+      "level": "WARNING",
+      "message": "   💾 Disco cheio: 94.8%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:52:45",
+      "level": "WARNING",
+      "message": "ALERT [RESOURCE]: Disco cheio: 94.8%",
+      "thread": "MonitoramentoAvancado",
+      "function": "add_alert"
+    },
+    {
+      "timestamp": "2025-06-18 16:54:45",
+      "level": "INFO",
+      "message": "📋 RELATÓRIO DE MONITORAMENTO AVANÇADO:",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:54:45",
+      "level": "INFO",
+      "message": "   ⚡ Execuções: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:54:45",
+      "level": "INFO",
+      "message": "   📈 Pares processados: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:54:45",
+      "level": "INFO",
+      "message": "   📝 Ordens enviadas: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:54:45",
+      "level": "INFO",
+      "message": "   💼 Posições ativas: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:54:45",
+      "level": "INFO",
+      "message": "   🚨 Alertas ativos: 5",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:54:45",
+      "level": "INFO",
+      "message": "   🔄 Status: Iniciando Sistema Completo",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:54:45",
+      "level": "INFO",
+      "message": "📊 MÉTRICAS DE PERFORMANCE:",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:54:45",
+      "level": "INFO",
+      "message": "   📊 total_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:54:45",
+      "level": "INFO",
+      "message": "   📊 winning_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:54:45",
+      "level": "INFO",
+      "message": "   📊 losing_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:54:45",
+      "level": "INFO",
+      "message": "   💰 total_pnl: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:54:45",
+      "level": "INFO",
+      "message": "   💰 max_drawdown: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:54:45",
+      "level": "INFO",
+      "message": "   📈 sharpe_ratio: 0.00%",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:54:45",
+      "level": "INFO",
+      "message": "   📈 win_rate: 0.00%",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:54:45",
+      "level": "INFO",
+      "message": "   💰 profit_factor: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:54:45",
+      "level": "INFO",
+      "message": "   📊 avg_trade_duration: 4:00:00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:54:45",
+      "level": "INFO",
+      "message": "   🔌 Conexão MT5: ❌ Desconectado",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:54:45",
+      "level": "SUCCESS",
+      "message": "   💚 Saúde do sistema: EXCELENTE (100%)",
+      "thread": "MonitoramentoAvancado",
+      "function": "_verificar_saude_sistema"
+    },
+    {
+      "timestamp": "2025-06-18 16:54:45",
+      "level": "INFO",
+      "message": "   💻 CPU: 4.6%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:54:45",
+      "level": "INFO",
+      "message": "   🧠 Memória: 74.5%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:54:45",
+      "level": "WARNING",
+      "message": "   💾 Disco cheio: 94.8%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:54:45",
+      "level": "WARNING",
+      "message": "ALERT [RESOURCE]: Disco cheio: 94.8%",
+      "thread": "MonitoramentoAvancado",
+      "function": "add_alert"
+    },
+    {
+      "timestamp": "2025-06-18 16:56:45",
+      "level": "INFO",
+      "message": "📋 RELATÓRIO DE MONITORAMENTO AVANÇADO:",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:56:45",
+      "level": "INFO",
+      "message": "   ⚡ Execuções: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:56:45",
+      "level": "INFO",
+      "message": "   📈 Pares processados: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:56:45",
+      "level": "INFO",
+      "message": "   📝 Ordens enviadas: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:56:45",
+      "level": "INFO",
+      "message": "   💼 Posições ativas: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:56:45",
+      "level": "INFO",
+      "message": "   🚨 Alertas ativos: 6",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:56:45",
+      "level": "INFO",
+      "message": "   🔄 Status: Iniciando Sistema Completo",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:56:45",
+      "level": "INFO",
+      "message": "📊 MÉTRICAS DE PERFORMANCE:",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:56:45",
+      "level": "INFO",
+      "message": "   📊 total_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:56:45",
+      "level": "INFO",
+      "message": "   📊 winning_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:56:45",
+      "level": "INFO",
+      "message": "   📊 losing_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:56:45",
+      "level": "INFO",
+      "message": "   💰 total_pnl: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:56:45",
+      "level": "INFO",
+      "message": "   💰 max_drawdown: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:56:45",
+      "level": "INFO",
+      "message": "   📈 sharpe_ratio: 0.00%",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:56:45",
+      "level": "INFO",
+      "message": "   📈 win_rate: 0.00%",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:56:45",
+      "level": "INFO",
+      "message": "   💰 profit_factor: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:56:45",
+      "level": "INFO",
+      "message": "   📊 avg_trade_duration: 4:00:00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:56:45",
+      "level": "INFO",
+      "message": "   🔌 Conexão MT5: ❌ Desconectado",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:56:45",
+      "level": "SUCCESS",
+      "message": "   💚 Saúde do sistema: EXCELENTE (100%)",
+      "thread": "MonitoramentoAvancado",
+      "function": "_verificar_saude_sistema"
+    },
+    {
+      "timestamp": "2025-06-18 16:56:45",
+      "level": "INFO",
+      "message": "   💻 CPU: 4.2%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:56:45",
+      "level": "INFO",
+      "message": "   🧠 Memória: 74.6%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:56:45",
+      "level": "WARNING",
+      "message": "   💾 Disco cheio: 94.8%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:56:45",
+      "level": "WARNING",
+      "message": "ALERT [RESOURCE]: Disco cheio: 94.8%",
+      "thread": "MonitoramentoAvancado",
+      "function": "add_alert"
+    },
+    {
+      "timestamp": "2025-06-18 16:58:45",
+      "level": "INFO",
+      "message": "📋 RELATÓRIO DE MONITORAMENTO AVANÇADO:",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:58:45",
+      "level": "INFO",
+      "message": "   ⚡ Execuções: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:58:45",
+      "level": "INFO",
+      "message": "   📈 Pares processados: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:58:45",
+      "level": "INFO",
+      "message": "   📝 Ordens enviadas: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:58:45",
+      "level": "INFO",
+      "message": "   💼 Posições ativas: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:58:45",
+      "level": "INFO",
+      "message": "   🚨 Alertas ativos: 7",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:58:45",
+      "level": "INFO",
+      "message": "   🔄 Status: Iniciando Sistema Completo",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:58:45",
+      "level": "INFO",
+      "message": "📊 MÉTRICAS DE PERFORMANCE:",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:58:45",
+      "level": "INFO",
+      "message": "   📊 total_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:58:45",
+      "level": "INFO",
+      "message": "   📊 winning_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:58:45",
+      "level": "INFO",
+      "message": "   📊 losing_trades: 0",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:58:45",
+      "level": "INFO",
+      "message": "   💰 total_pnl: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:58:45",
+      "level": "INFO",
+      "message": "   💰 max_drawdown: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:58:45",
+      "level": "INFO",
+      "message": "   📈 sharpe_ratio: 0.00%",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:58:45",
+      "level": "INFO",
+      "message": "   📈 win_rate: 0.00%",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:58:45",
+      "level": "INFO",
+      "message": "   💰 profit_factor: 0.00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:58:45",
+      "level": "INFO",
+      "message": "   📊 avg_trade_duration: 4:00:00",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:58:45",
+      "level": "INFO",
+      "message": "   🔌 Conexão MT5: ❌ Desconectado",
+      "thread": "MonitoramentoAvancado",
+      "function": "thread_monitoramento_avancado"
+    },
+    {
+      "timestamp": "2025-06-18 16:58:45",
+      "level": "SUCCESS",
+      "message": "   💚 Saúde do sistema: EXCELENTE (100%)",
+      "thread": "MonitoramentoAvancado",
+      "function": "_verificar_saude_sistema"
+    },
+    {
+      "timestamp": "2025-06-18 16:58:45",
+      "level": "INFO",
+      "message": "   💻 CPU: 8.7%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:58:45",
+      "level": "INFO",
+      "message": "   🧠 Memória: 74.9%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:58:45",
+      "level": "WARNING",
+      "message": "   💾 Disco cheio: 94.8%",
+      "thread": "MonitoramentoAvancado",
+      "function": "_monitorar_recursos"
+    },
+    {
+      "timestamp": "2025-06-18 16:58:45",
+      "level": "WARNING",
+      "message": "ALERT [RESOURCE]: Disco cheio: 94.8%",
+      "thread": "MonitoramentoAvancado",
+      "function": "add_alert"
+    },
+    {
+      "timestamp": "2025-06-18 16:59:44",
+      "level": "WARNING",
+      "message": "🛑 INTERRUPÇÃO: Parando sistema...",
+      "thread": "MainThread",
+      "function": "iniciar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:59:44",
+      "level": "INFO",
+      "message": "🛑 Parando sistema completo...",
+      "thread": "MainThread",
+      "function": "parar_sistema_completo"
+    },
+    {
+      "timestamp": "2025-06-18 16:59:44",
+      "level": "SUCCESS",
+      "message": "💾 Backup automático salvo: backup_sistema_20250618_165944.json",
+      "thread": "MainThread",
+      "function": "_backup_automatico"
+    }
+  ],
+  "alertas_completos": [
+    {
+      "id": 0,
+      "timestamp": "2025-06-18 16:44:44.911432",
+      "type": "RESOURCE",
+      "message": "Disco cheio: 94.8%",
+      "severity": "WARNING",
+      "acknowledged": false,
+      "auto_generated": true
+    },
+    {
+      "id": 1,
+      "timestamp": "2025-06-18 16:46:44.968623",
+      "type": "RESOURCE",
+      "message": "Disco cheio: 94.8%",
+      "severity": "WARNING",
+      "acknowledged": false,
+      "auto_generated": true
+    },
+    {
+      "id": 2,
+      "timestamp": "2025-06-18 16:48:45.111153",
+      "type": "RESOURCE",
+      "message": "Disco cheio: 94.8%",
+      "severity": "WARNING",
+      "acknowledged": false,
+      "auto_generated": true
+    },
+    {
+      "id": 3,
+      "timestamp": "2025-06-18 16:50:45.168059",
+      "type": "RESOURCE",
+      "message": "Disco cheio: 94.8%",
+      "severity": "WARNING",
+      "acknowledged": false,
+      "auto_generated": true
+    },
+    {
+      "id": 4,
+      "timestamp": "2025-06-18 16:52:45.373952",
+      "type": "RESOURCE",
+      "message": "Disco cheio: 94.8%",
+      "severity": "WARNING",
+      "acknowledged": false,
+      "auto_generated": true
+    },
+    {
+      "id": 5,
+      "timestamp": "2025-06-18 16:54:45.538587",
+      "type": "RESOURCE",
+      "message": "Disco cheio: 94.8%",
+      "severity": "WARNING",
+      "acknowledged": false,
+      "auto_generated": true
+    },
+    {
+      "id": 6,
+      "timestamp": "2025-06-18 16:56:45.704401",
+      "type": "RESOURCE",
+      "message": "Disco cheio: 94.8%",
+      "severity": "WARNING",
+      "acknowledged": false,
+      "auto_generated": true
+    },
+    {
+      "id": 7,
+      "timestamp": "2025-06-18 16:58:45.788227",
+      "type": "RESOURCE",
+      "message": "Disco cheio: 94.8%",
+      "severity": "WARNING",
+      "acknowledged": false,
+      "auto_generated": true
+    }
+  ]
+}

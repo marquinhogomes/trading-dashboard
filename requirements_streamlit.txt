@@ -1,0 +1,49 @@
+# Requisitos para o Sistema de Trading Streamlit
+# Instale com: pip install -r requirements_streamlit.txt
+
+# Interface e visualização
+streamlit>=1.28.0
+plotly>=5.15.0
+matplotlib>=3.7.0
+
+# Análise de dados
+pandas>=2.0.0
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Machine Learning e Estatística
+scikit-learn>=1.3.0
+statsmodels>=0.14.0
+arch>=5.3.0
+
+# Trading e dados financeiros
+MetaTrader5>=5.0.37
+pandas-ta>=0.3.14b0
+ta>=0.10.0
+
+# Processamento e utilidades
+joblib>=1.3.0
+schedule>=1.2.0
+psutil>=5.9.0
+python-dateutil>=2.8.0
+pytz>=2023.3
+
+# Desenvolvimento e logs
+loguru>=0.7.0
+rich>=13.0.0
+tabulate>=0.9.0
+
+# Deep Learning (opcional)
+tensorflow>=2.13.0
+keras>=2.13.0
+
+# Configuração
+pydantic>=2.0.0
+python-dotenv>=1.0.0
+
+# Análise técnica adicional
+TA-Lib>=0.4.25  # Opcional: requer instalação manual
+
+# Backup e serialização
+pickle-mixin>=1.0.2
+cloudpickle>=2.2.0

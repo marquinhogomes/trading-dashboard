@@ -1,0 +1,80 @@
+{
+  "resumo": {
+    "execucoes": 0,
+    "pares_processados": 0,
+    "ordens_enviadas": 0,
+    "inicio": "2025-06-24 22:40:02.211594",
+    "ultimo_ciclo": null,
+    "status": "Parando"
+  },
+  "duracao_total": "0:01:10.638793",
+  "log_completo": [
+    "[2025-06-24 22:39:46] [Dashboard] ✅ Sistema integrado carregado - Modo threading avançado ativado",
+    "[2025-06-24 22:39:59] [Dashboard] 🚀 Iniciando sistema com threading avançado...",
+    "[2025-06-24 22:39:59] [Dashboard] ✅ Threads ativas:",
+    "[2025-06-24 22:39:59] [Dashboard]    📊 Monitoramento geral",
+    "[2025-06-24 22:39:59] [Dashboard]    🔍 Monitoramento de posições",
+    "[2025-06-24 22:39:59] [Dashboard]    📈 Break-even contínuo",
+    "[2025-06-24 22:39:59] [Dashboard]    ⏰ Ajustes programados",
+    "[2025-06-24 22:39:59] [Dashboard] 🎯 Inicializando sistema integrado completo...",
+    "[2025-06-24 22:40:02] [Dashboard] ✅ MT5 conectado - Conta: 3710060",
+    "[2025-06-24 22:40:02] [Dashboard] ✅ Sistema iniciado com sucesso",
+    "[2025-06-24 22:40:02] 🎯 INICIANDO SISTEMA INTEGRADO DE TRADING COM MONITORAMENTO AVANÇADO",
+    "[2025-06-24 22:40:02] ================================================================================",
+    "[2025-06-24 22:40:02] Este sistema executa:",
+    "[2025-06-24 22:40:02] ✅ Coleta de dados reais de pares",
+    "[2025-06-24 22:40:02] ✅ Análise de cointegração",
+    "[2025-06-24 22:40:02] ✅ Modelos ARIMA/GARCH",
+    "[2025-06-24 22:40:02] ✅ Envio de ordens automáticas",
+    "[2025-06-24 22:40:02] ✅ Monitoramento de posições em tempo real",
+    "[2025-06-24 22:40:02] ✅ Break-even contínuo durante pregão",
+    "[2025-06-24 22:40:02] ✅ Ajustes programados (15:10h, 15:20h, 16:01h)",
+    "[2025-06-24 22:40:02] ✅ Gestão de risco integrada",
+    "[2025-06-24 22:40:02] ================================================================================",
+    "[2025-06-24 22:40:02] INICIANDO: Sistema Original de Trading",
+    "[2025-06-24 22:40:02] 📊 INICIANDO: Thread de monitoramento",
+    "[2025-06-24 22:40:02] 📋 RELATÓRIO DE MONITORAMENTO:",
+    "[2025-06-24 22:40:02]    ⚡ Execuções: 0",
+    "[2025-06-24 22:40:02] ✅ Arquivo lido com encoding: utf-8",
+    "[2025-06-24 22:40:02]    📈 Pares processados: 0",
+    "[2025-06-24 22:40:02] 🔍 INICIANDO: Thread de monitoramento de posições",
+    "[2025-06-24 22:40:02] 📈 INICIANDO: Thread de Break-Even Contínuo",
+    "[2025-06-24 22:40:02] ✅ MetaTrader5 importado com sucesso",
+    "[2025-06-24 22:40:02] ⏰ INICIANDO: Thread de Ajustes Programados",
+    "[2025-06-24 22:40:02] ✅ Todas as threads iniciadas - Sistema operacional!",
+    "[2025-06-24 22:40:02] 🔍 VERIFICAÇÃO DE POSIÇÕES E ORDENS PENDENTES",
+    "[2025-06-24 22:40:02]    📝 Ordens enviadas: 0",
+    "[2025-06-24 22:40:02] 🔍 Thread de monitoramento de posições: A cada 30 segundos",
+    "[2025-06-24 22:40:02] 🗑️ REMOVENDO ORDENS PENDENTES ÀS 22:40",
+    "[2025-06-24 22:40:02] ✅ Nenhuma posição aberta no momento",
+    "[2025-06-24 22:40:02]    🔄 Status: Iniciando",
+    "[2025-06-24 22:40:02] 📈 Thread de break-even contínuo: A cada 10 segundos durante pregão",
+    "[2025-06-24 22:40:02] 📋 Nenhuma ordem pendente encontrada",
+    "[2025-06-24 22:40:02] ⏰ Thread de ajustes programados: Horários específicos (15:10h, 15:20h, 16:01h)",
+    "[2025-06-24 22:40:02] 💡 Pressione Ctrl+C para parar o sistema",
+    "[2025-06-24 22:40:02] 🔒 FECHAMENTO TOTAL DO DIA ÀS 22:40",
+    "[2025-06-24 22:40:02] 📋 Nenhuma posição/ordem do sistema para fechar",
+    "[2025-06-24 22:40:32] 🔍 VERIFICAÇÃO DE POSIÇÕES E ORDENS PENDENTES",
+    "[2025-06-24 22:40:32] ✅ Nenhuma posição aberta no momento",
+    "[2025-06-24 22:41:03] 🔍 VERIFICAÇÃO DE POSIÇÕES E ORDENS PENDENTES",
+    "[2025-06-24 22:41:03] ✅ Nenhuma posição aberta no momento"
+  ],
+  "timestamp_relatorio": "2025-06-24T22:41:12.850387",
+  "configuracoes": {
+    "prefixo_magic": "2",
+    "janela_break_even": [
+      8,
+      17
+    ],
+    "horarios_ajuste": {
+      "ajuste_posicoes": "15:10",
+      "remove_pendentes": "15:20",
+      "fechamento_total": "16:01"
+    }
+  },
+  "stops_ajustados": [],
+  "ajustes_executados": [
+    "fechamento_total_2025-06-24",
+    "remove_pendentes_2025-06-24"
+  ]
+}

@@ -1,0 +1,55 @@
+# Requirements para Dashboard Trading Pro - MT5 Real
+# Sistema completo de trading algorítmico com interface Streamlit
+
+# Interface Web
+streamlit>=1.28.0
+
+# Visualizações e Gráficos
+plotly>=5.15.0
+matplotlib>=3.7.1
+seaborn>=0.12.2
+
+# Análise de Dados
+pandas>=2.0.0
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Trading e Mercado Financeiro
+MetaTrader5>=5.0.45
+
+# Análise Estatística e Machine Learning
+statsmodels>=0.14.0
+scikit-learn>=1.3.0
+
+# Análise Técnica
+pandas-ta>=0.3.14b0
+
+# Processamento de Tempo e Timezone
+pytz>=2023.3
+
+# Manipulação de Arquivos
+openpyxl>=3.1.2
+xlsxwriter>=3.1.2
+
+# Utilitários
+requests>=2.31.0
+python-dateutil>=2.8.2
+
+# Logging e Debug
+colorama>=0.4.6
+
+# Validação e Tipos
+typing-extensions>=4.7.1
+
+# Opcional: TensorFlow (comentado para evitar problemas)
+tensorflow>=2.13.0
+keras>=2.13.0
+
+# Opcional: Análise Técnica Avançada (comentado para evitar problemas)  
+ta>=0.10.2
+
+# Opcional: Agendamento (comentado para evitar problemas)
+schedule>=1.2.0
+
+# GARCH (necessário para volatilidade condicional via GARCH)
+arch>=5.6.0

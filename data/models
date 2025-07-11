@@ -1,0 +1,24 @@
+import threading
+import time
+
+def extracao_e_analise():
+    while True:
+        print("Extraindo e analisando dados...")
+        time.sleep(5)  # Simula tempo de processamento
+
+def monitoramento():
+    while True:
+        print("Monitorando operações...")
+        time.sleep(1)  # Verifica operações a cada segundo
+
+# Criação das threads
+thread_extracao = threading.Thread(target=extracao_e_analise)
+thread_monitoramento = threading.Thread(target=monitoramento)
+
+# Início das threads
+thread_extracao.start()
+thread_monitoramento.start()
+
+# Aguarda as threads terminarem (nunca vai terminar neste exemplo)
+thread_extracao.join()
+thread_monitoramento.join()

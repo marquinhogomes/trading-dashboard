@@ -1,0 +1,75 @@
+{
+  "resumo": {
+    "execucoes": 0,
+    "pares_processados": 0,
+    "ordens_enviadas": 0,
+    "inicio": "2025-07-06 19:24:21.502062",
+    "ultimo_ciclo": null,
+    "status": "Parando"
+  },
+  "duracao_total": "0:00:02.793514",
+  "log_completo": [
+    "[2025-07-06 19:24:21] 🎯 INICIANDO THREADS DO SISTEMA INTEGRADO (Modo Dashboard)",
+    "[2025-07-06 19:24:21] ================================================================================",
+    "[2025-07-06 19:24:23] 📊 Parâmetros dinâmicos verificados - sem alterações pendentes",
+    "[2025-07-06 19:24:23] ✅ Criando threads...",
+    "[2025-07-06 19:24:23]    • Sistema Trading",
+    "[2025-07-06 19:24:23]    • Monitoramento Geral",
+    "[2025-07-06 19:24:23]    • Monitoramento de Posições",
+    "[2025-07-06 19:24:23]    • Break-even Contínuo",
+    "[2025-07-06 19:24:23]    • Ajustes Programados",
+    "[2025-07-06 19:24:23]    • Análise e Envio de Ordens",
+    "[2025-07-06 19:24:23] ================================================================================",
+    "[2025-07-06 19:24:23] 🚀 Iniciando threads...",
+    "[2025-07-06 19:24:23] INICIANDO: Sistema Original de Trading",
+    "[2025-07-06 19:24:23] ✅ Thread Trading iniciada",
+    "[2025-07-06 19:24:23] 📊 INICIANDO: Thread de monitoramento",
+    "[2025-07-06 19:24:23] ✅ Thread Monitor iniciada",
+    "[2025-07-06 19:24:23] 📋 RELATÓRIO DE MONITORAMENTO:",
+    "[2025-07-06 19:24:23] ✅ Arquivo lido com encoding: utf-8",
+    "[2025-07-06 19:24:23] 🔍 INICIANDO: Thread de monitoramento de posições",
+    "[2025-07-06 19:24:23]    ⚡ Execuções: 0",
+    "[2025-07-06 19:24:23] ✅ Thread Monitor Posições iniciada",
+    "[2025-07-06 19:24:23]    📈 Pares processados: 0",
+    "[2025-07-06 19:24:23]    📝 Ordens enviadas: 0",
+    "[2025-07-06 19:24:23] 📈 INICIANDO: Thread de Break-Even Contínuo",
+    "[2025-07-06 19:24:23]    🔄 Status: Iniciando",
+    "[2025-07-06 19:24:23] ✅ Thread Break-Even iniciada",
+    "[2025-07-06 19:24:23] ⏰ INICIANDO: Thread de Ajustes Programados",
+    "[2025-07-06 19:24:23] ✅ Thread Ajustes iniciada",
+    "[2025-07-06 19:24:23] 📊 INICIANDO: Thread de Análise e Envio de Ordens",
+    "[2025-07-06 19:24:23] ✅ Thread Ordens iniciada",
+    "[2025-07-06 19:24:23] 🔍 Verificando threads...",
+    "[2025-07-06 19:24:23] ✅ MetaTrader5 importado com sucesso",
+    "[2025-07-06 19:24:23] 🗑️ REMOVENDO ORDENS PENDENTES ÀS 19:24",
+    "[2025-07-06 19:24:23] 🔍 VERIFICAÇÃO DE POSIÇÕES E ORDENS PENDENTES",
+    "[2025-07-06 19:24:23] ✅ Nenhuma posição aberta no momento",
+    "[2025-07-06 19:24:23] 📋 Nenhuma ordem pendente encontrada",
+    "[2025-07-06 19:24:23] 🔒 FECHAMENTO TOTAL DO DIA ÀS 19:24",
+    "[2025-07-06 19:24:23] 📋 Nenhuma posição/ordem do sistema para fechar",
+    "[2025-07-06 19:24:24] ✅ SISTEMA INICIADO COM SUCESSO: 6/6 threads ativas",
+    "[2025-07-06 19:24:24] 🔍 Thread de monitoramento de posições: A cada 30 segundos",
+    "[2025-07-06 19:24:24] 📈 Thread de break-even contínuo: A cada 10 segundos durante pregão",
+    "[2025-07-06 19:24:24] ⏰ Thread de ajustes programados: Horários específicos",
+    "[2025-07-06 19:24:24] 📊 Thread de análise e envio de ordens: A cada 5 minutos durante pregão",
+    "[2025-07-06 19:24:24] ================================================================================"
+  ],
+  "timestamp_relatorio": "2025-07-06T19:24:24.295576",
+  "configuracoes": {
+    "prefixo_magic": "2",
+    "janela_break_even": [
+      8,
+      17
+    ],
+    "horarios_ajuste": {
+      "ajuste_posicoes": "15:10",
+      "remove_pendentes": "15:20",
+      "fechamento_total": "16:01"
+    }
+  },
+  "stops_ajustados": [],
+  "ajustes_executados": [
+    "remove_pendentes_2025-07-06",
+    "fechamento_total_2025-07-06"
+  ]
+}

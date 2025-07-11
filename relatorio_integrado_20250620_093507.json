@@ -1,0 +1,40 @@
+{
+  "resumo": {
+    "execucoes": 0,
+    "pares_processados": 0,
+    "ordens_enviadas": 0,
+    "inicio": "2025-06-20 09:31:33.964229",
+    "ultimo_ciclo": null,
+    "status": "Parando"
+  },
+  "duracao_total": "0:03:33.449069",
+  "log_completo": [
+    "[2025-06-20 09:31:33] 🎯 INICIANDO SISTEMA INTEGRADO DE TRADING",
+    "[2025-06-20 09:31:33] ============================================================",
+    "[2025-06-20 09:31:33] Este sistema executa:",
+    "[2025-06-20 09:31:33] ✅ Coleta de dados reais de pares",
+    "[2025-06-20 09:31:33] ✅ Análise de cointegração",
+    "[2025-06-20 09:31:33] ✅ Modelos ARIMA/GARCH",
+    "[2025-06-20 09:31:33] ✅ Envio de ordens automáticas",
+    "[2025-06-20 09:31:33] ✅ Monitoramento de posições",
+    "[2025-06-20 09:31:33] ✅ Gestão de risco integrada",
+    "[2025-06-20 09:31:33] ============================================================",
+    "[2025-06-20 09:31:33] INICIANDO: Sistema Original de Trading",
+    "[2025-06-20 09:31:33] 📊 INICIANDO: Thread de monitoramento",
+    "[2025-06-20 09:31:33] ✅ Threads iniciadas - Sistema operacional!",
+    "[2025-06-20 09:31:33] 📋 RELATÓRIO DE MONITORAMENTO:",
+    "[2025-06-20 09:31:33] ✅ Arquivo lido com encoding: utf-8",
+    "[2025-06-20 09:31:33]    ⚡ Execuções: 0",
+    "[2025-06-20 09:31:33] 💡 Pressione Ctrl+C para parar o sistema",
+    "[2025-06-20 09:31:33]    📈 Pares processados: 0",
+    "[2025-06-20 09:31:33]    📝 Ordens enviadas: 0",
+    "[2025-06-20 09:31:33]    🔄 Status: Iniciando",
+    "[2025-06-20 09:33:33] 📋 RELATÓRIO DE MONITORAMENTO:",
+    "[2025-06-20 09:33:33]    ⚡ Execuções: 0",
+    "[2025-06-20 09:33:33]    📈 Pares processados: 0",
+    "[2025-06-20 09:33:33]    📝 Ordens enviadas: 0",
+    "[2025-06-20 09:33:33]    🔄 Status: Iniciando",
+    "[2025-06-20 09:35:07] 🛑 INTERRUPÇÃO: Parando sistema..."
+  ],
+  "timestamp_relatorio": "2025-06-20T09:35:07.413298"
+}
