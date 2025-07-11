@@ -26,7 +26,37 @@ import statsmodels.api as sm  # Modelagem estatística
 from datetime import datetime, timedelta  # Manipulação de datas
 import pytz  # Fusos horários
 import plotly.graph_objects as go  # Gráficos interativos
-import MetaTrader5 as mt5  # Conexão com a plataforma MetaTrader 5
+# Importação condicional do MetaTrader5 para compatibilidade com Streamlit Cloud
+try:
+    import MetaTrader5 as mt5  # Conexão com a plataforma MetaTrader 5
+    MT5_AVAILABLE = True
+except ImportError:
+    # Modo compatível com Streamlit Cloud - MT5 não disponível
+    MT5_AVAILABLE = False
+    print("[INFO] MetaTrader5 não disponível - executando em modo demonstração")
+    
+    # Mock do MT5 para compatibilidade
+    class MT5Mock:
+        @staticmethod
+        def initialize():
+            return True
+        @staticmethod
+        def shutdown():
+            pass
+        @staticmethod
+        def copy_rates_range(*args, **kwargs):
+            return None
+        @staticmethod
+        def positions_get(*args, **kwargs):
+            return []
+        @staticmethod
+        def orders_get(*args, **kwargs):
+            return []
+        @staticmethod
+        def symbol_info_tick(*args, **kwargs):
+            return None
+    
+    mt5 = MT5Mock()
 import time  # Manipulação de tempo
 import pandas_ta as pta  # Indicadores técnicos pandas_ta
 import warnings  # Controle de avisos
@@ -4120,6 +4150,57 @@ def executar_pipeline(timeframe):
     print(f"[PROFILE] executar_pipeline({timeframe}) levou {elapsed:.3f}s")
     
 def main(loop=True, timeframe_atual=None, filter_params=None):
+    """
+    Função principal do sistema de trading
+    Funciona com MetaTrader5 (local) ou em modo demonstração (Streamlit Cloud)
+    """
+    
+    # Verificação inicial do MT5
+    if not MT5_AVAILABLE:
+        print("[INFO] Executando em modo DEMONSTRAÇÃO - MetaTrader5 não disponível")
+        print("[INFO] Funcionalidades de trading real desabilitadas")
+        
+        # Cria dados simulados para demonstração
+        import pandas as pd
+        import numpy as np
+        from datetime import datetime, timedelta
+        
+        # Gera dados simulados para o dashboard
+        dados_simulados = []
+        for i in range(10):
+            dados_simulados.append({
+                'ID': i + 1,
+                'Dependente': f'PETR{i+3}',
+                'Independente': f'VALE{i+3}',
+                'Timeframe': '1H',
+                'Período': 60 + i*10,
+                'Z-Score': np.random.uniform(-3, 3),
+                'beta': np.random.uniform(0.5, 1.5),
+                'r2': np.random.uniform(0.6, 0.95),
+                'correlacao': np.random.uniform(0.7, 0.95),
+                'adf_p_value': np.random.uniform(0.001, 0.05),
+                'preco_atual': np.random.uniform(20, 50),
+                'spread_compra': np.random.uniform(20, 50),
+                'spread_venda': np.random.uniform(20, 50),
+                'Timestamp': datetime.now()
+            })
+        
+        df_simulado = pd.DataFrame(dados_simulados)
+        
+        # Salva dados simulados para o dashboard
+        try:
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            df_simulado.to_pickle(os.path.join(script_dir, "tabela_linha_operacao.pkl"))
+            df_simulado.to_csv(os.path.join(script_dir, "tabela_linha_operacao.csv"), index=False)
+            df_simulado.to_pickle(os.path.join(script_dir, "tabela_linha_operacao01.pkl"))
+            df_simulado.to_csv(os.path.join(script_dir, "tabela_linha_operacao01.csv"), index=False)
+            print("[INFO] Dados simulados criados para demonstração do dashboard")
+        except Exception as e:
+            print(f"[ERRO] Falha ao criar dados simulados: {e}")
+        
+        return df_simulado
+    
+    # Código original para quando MT5 está disponível
     global dados_iniciais_coletados, data_atual, saldo_inicial, preco_abertura_carregado
     global tabela_linha_operacao, linha_operacao01, linha_operacao
     global resultados_zscore_dependente_atual01, tabela_zscore_dependente_atual01

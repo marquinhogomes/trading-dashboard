@@ -12,6 +12,15 @@ import sys
 import os
 import warnings
 import pandas as pd
+
+# Verificação se MT5 está disponível
+try:
+    import MetaTrader5 as mt5
+    MT5_AVAILABLE = True
+except ImportError:
+    MT5_AVAILABLE = False
+    st.warning("⚠️ MetaTrader5 não disponível - Dashboard em modo demonstração")
+
 try:
     from streamlit_autorefresh import st_autorefresh
 except ImportError:
