@@ -1,0 +1,2 @@
+# Minimal dependency for the standalone sticker album app
+streamlit
