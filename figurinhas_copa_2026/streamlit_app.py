@@ -1,311 +1,122 @@
-import csv
-import io
 import json
 import re
-from datetime import datetime
+from pathlib import Path
 
 import streamlit as st
+import streamlit.components.v1 as components
 
 st.set_page_config(
     page_title="Figurinhas Copa 2026",
     page_icon="⚽",
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="collapsed",
 )
 
-SECTIONS = {
-    "FWC": "🏆 Abertura / Especiais",
-    "ALG": "🇩🇿 Argélia",
-    "ARG": "🇦🇷 Argentina",
-    "AUS": "🇦🇺 Austrália",
-    "AUT": "🇦🇹 Áustria",
-    "BEL": "🇧🇪 Bélgica",
-    "BIH": "🇧🇦 Bósnia e Herzegovina",
-    "BRA": "🇧🇷 Brasil",
-    "CAN": "🇨🇦 Canadá",
-    "CIV": "🇨🇮 Costa do Marfim",
-    "COD": "🇨🇩 RD Congo",
-    "COL": "🇨🇴 Colômbia",
-    "CPV": "🇨🇻 Cabo Verde",
-    "CRO": "🇭🇷 Croácia",
-    "CUW": "🇨🇼 Curaçao",
-    "CZE": "🇨🇿 Tchéquia",
-    "ECU": "🇪🇨 Equador",
-    "EGY": "🇪🇬 Egito",
-    "ENG": "🏴 Inglaterra",
-    "ESP": "🇪🇸 Espanha",
-    "FRA": "🇫🇷 França",
-    "GER": "🇩🇪 Alemanha",
-    "GHA": "🇬🇭 Gana",
-    "HAI": "🇭🇹 Haiti",
-    "IRN": "🇮🇷 Irã",
-    "IRQ": "🇮🇶 Iraque",
-    "JOR": "🇯🇴 Jordânia",
-    "JPN": "🇯🇵 Japão",
-    "KOR": "🇰🇷 Coreia do Sul",
-    "KSA": "🇸🇦 Arábia Saudita",
-    "MAR": "🇲🇦 Marrocos",
-    "MEX": "🇲🇽 México",
-    "NED": "🇳🇱 Países Baixos",
-    "NOR": "🇳🇴 Noruega",
-    "NZL": "🇳🇿 Nova Zelândia",
-    "PAN": "🇵🇦 Panamá",
-    "PAR": "🇵🇾 Paraguai",
-    "POR": "🇵🇹 Portugal",
-    "QAT": "🇶🇦 Catar",
-    "RSA": "🇿🇦 África do Sul",
-    "SCO": "🏴 Escócia",
-    "SEN": "🇸🇳 Senegal",
-    "SUI": "🇨🇭 Suíça",
-    "SWE": "🇸🇪 Suécia",
-    "TUN": "🇹🇳 Tunísia",
-    "TUR": "🇹🇷 Turquia",
-    "URU": "🇺🇾 Uruguai",
-    "USA": "🇺🇸 Estados Unidos",
-    "UZB": "🇺🇿 Uzbequistão",
-}
+SECTIONS = [
+    ["FWC", "Abertura / Especiais", "🏆", 20, "intro"],
+    ["ALG", "Argélia", "🇩🇿", 20, "team"], ["ARG", "Argentina", "🇦🇷", 20, "team"],
+    ["AUS", "Austrália", "🇦🇺", 20, "team"], ["AUT", "Áustria", "🇦🇹", 20, "team"],
+    ["BEL", "Bélgica", "🇧🇪", 20, "team"], ["BIH", "Bósnia e Herzegovina", "🇧🇦", 20, "team"],
+    ["BRA", "Brasil", "🇧🇷", 20, "team"], ["CAN", "Canadá", "🇨🇦", 20, "team"],
+    ["CIV", "Costa do Marfim", "🇨🇮", 20, "team"], ["COD", "RD Congo", "🇨🇩", 20, "team"],
+    ["COL", "Colômbia", "🇨🇴", 20, "team"], ["CPV", "Cabo Verde", "🇨🇻", 20, "team"],
+    ["CRO", "Croácia", "🇭🇷", 20, "team"], ["CUW", "Curaçao", "🇨🇼", 20, "team"],
+    ["CZE", "Tchéquia", "🇨🇿", 20, "team"], ["ECU", "Equador", "🇪🇨", 20, "team"],
+    ["EGY", "Egito", "🇪🇬", 20, "team"], ["ENG", "Inglaterra", "🏴", 20, "team"],
+    ["ESP", "Espanha", "🇪🇸", 20, "team"], ["FRA", "França", "🇫🇷", 20, "team"],
+    ["GER", "Alemanha", "🇩🇪", 20, "team"], ["GHA", "Gana", "🇬🇭", 20, "team"],
+    ["HAI", "Haiti", "🇭🇹", 20, "team"], ["IRN", "Irã", "🇮🇷", 20, "team"],
+    ["IRQ", "Iraque", "🇮🇶", 20, "team"], ["JOR", "Jordânia", "🇯🇴", 20, "team"],
+    ["JPN", "Japão", "🇯🇵", 20, "team"], ["KOR", "Coreia do Sul", "🇰🇷", 20, "team"],
+    ["KSA", "Arábia Saudita", "🇸🇦", 20, "team"], ["MAR", "Marrocos", "🇲🇦", 20, "team"],
+    ["MEX", "México", "🇲🇽", 20, "team"], ["NED", "Países Baixos", "🇳🇱", 20, "team"],
+    ["NOR", "Noruega", "🇳🇴", 20, "team"], ["NZL", "Nova Zelândia", "🇳🇿", 20, "team"],
+    ["PAN", "Panamá", "🇵🇦", 20, "team"], ["PAR", "Paraguai", "🇵🇾", 20, "team"],
+    ["POR", "Portugal", "🇵🇹", 20, "team"], ["QAT", "Catar", "🇶🇦", 20, "team"],
+    ["RSA", "África do Sul", "🇿🇦", 20, "team"], ["SCO", "Escócia", "🏴", 20, "team"],
+    ["SEN", "Senegal", "🇸🇳", 20, "team"], ["SUI", "Suíça", "🇨🇭", 20, "team"],
+    ["SWE", "Suécia", "🇸🇪", 20, "team"], ["TUN", "Tunísia", "🇹🇳", 20, "team"],
+    ["TUR", "Turquia", "🇹🇷", 20, "team"], ["URU", "Uruguai", "🇺🇾", 20, "team"],
+    ["USA", "Estados Unidos", "🇺🇸", 20, "team"], ["UZB", "Uzbequistão", "🇺🇿", 20, "team"],
+]
 
-INITIAL_OWNED_TEXT = """
-FWC-1 FWC-2 FWC-5 FWC-6 FWC-8 FWC-9 FWC-10 FWC-11 FWC-13 FWC-14 FWC-15 FWC-16 FWC-17 FWC-19 FWC-20 MEX-1 MEX-3 MEX-15 MEX-17 MEX-18 MEX-19 RSA-2 RSA-4 RSA-5 RSA-6 RSA-10 RSA-14 RSA-15 RSA-16 RSA-19 KOR-3 KOR-5 KOR-6 KOR-8 KOR-9 KOR-12 KOR-14 KOR-17 KOR-18 CZE-5 CZE-6 CZE-9 CZE-10 CZE-18 CZE-19 CZE-20 CAN-1 CAN-5 CAN-8 CAN-10 CAN-11 CAN-13 BIH-4 BIH-7 BIH-8 BIH-3 BIH-11 BIH-16 BIH-20 QAT-3 QAT-4 QAT-7 QAT-9 QAT-14 QAT-17 QAT-18 SUI-1 SUI-2 SUI-6 SUI-8 SUI-9 SUI-10 SUI-11 SUI-12 SUI-14 SUI-16 SUI-18 SUI-19 SUI-20 BRA-2 BRA-3 BRA-4 BRA-5 BRA-6 BRA-9 BRA-10 BRA-11 BRA-13 BRA-14 BRA-15 BRA-16 BRA-18 MAR-3 MAR-8 MAR-9 MAR-14 MAR-18 HAI-1 HAI-5 HAI-9 HAI-10 HAI-14 HAI-15 HAI-16 HAI-18 HAI-19 HAI-20 SCO-2 SCO-5 SCO-8 SCO-13 SCO-18 SCO-20 USA-1 USA-2 USA-3 USA-4 USA-13 USA-15 USA-16 USA-20 PAR-2 PAR-3 PAR-4 PAR-6 PAR-7 PAR-5 PAR-9 PAR-10 PAR-11 PAR-13 PAR-14 PAR-15 PAR-16 PAR-18 AUS-1 AUS-2 AUS-4 AUS-11 AUS-12 AUS-16 AUS-17 AUS-18 TUR-1 TUR-5 TUR-7 TUR-9 TUR-12 TUR-14 TUR-18 TUR-20 GER-4 GER-7 GER-8 GER-9 GER-11 GER-12 GER-14 GER-15 GER-17 GER-18 GER-19 GER-20 CUW-1 CUW-2 CUW-4 CUW-6 CUW-8 CUW-10 CUW-12 CUW-14 CUW-15 CUW-16 CUW-17 CUW-19 CIV-1 CIV-2 CIV-7 CIV-9 CIV-10 CIV-11 CIV-13 CIV-15 CIV-16 ECU-1 ECU-2 ECU-3 ECU-6 ECU-7 ECU-9 ECU-10 ECU-11 ECU-14 ECU-17 ECU-18 ECU-19 NED-8 NED-12 NED-13 NED-19 NED-20 JPN-3 JPN-7 JPN-8 JPN-9 JPN-10 JPN-15 JPN-18 JPN-20 SWE-1 SWE-2 SWE-4 SWE-5 SWE-6 SWE-8 SWE-9 SWE-11 SWE-12 SWE-14 SWE-20 TUN-3 TUN-4 TUN-7 TUN-10 TUN-15 TUN-19 BEL-2 BEL-3 BEL-5 BEL-6 BEL-7 BEL-9 BEL-11 BEL-16 BEL-20 EGY-7 EGY-8 EGY-10 EGY-12 EGY-17 EGY-18 EGY-20 IRN-1 IRN-10 IRN-17 IRN-18 IRN-19 IRN-20 NZL-2 NZL-5 NZL-6 NZL-8 NZL-9 NZL-10 NZL-17 NZL-18 ESP-1 ESP-2 ESP-3 ESP-4 ESP-5 ESP-6 ESP-7 ESP-8 ESP-9 ESP-10 ESP-11 ESP-12 ESP-13 ESP-14 ESP-15 ESP-17 ESP-18 ESP-20 CPV-8 CPV-9 CPV-11 CPV-12 CPV-20 KSA-1 KSA-2 KSA-3 KSA-7 KSA-8 KSA-9 KSA-10 KSA-12 KSA-13 KSA-14 KSA-15 KSA-16 KSA-18 KSA-19 KSA-20 URU-1 URU-4 URU-7 URU-10 URU-11 URU-15 URU-16 URU-20 FRA-1 FRA-2 FRA-4 FRA-5 FRA-6 FRA-7 FRA-8 FRA-9 FRA-10 FRA-11 FRA-12 FRA-14 FRA-15 FRA-16 FRA-17 FRA-18 FRA-19 FRA-20 SEN-5 SEN-9 SEN-13 SEN-14 SEN-17 SEN-20 IRQ-1 IRQ-3 IRQ-4 IRQ-5 IRQ-7 IRQ-9 IRQ-10 IRQ-13 IRQ-14 IRQ-16 IRQ-19 IRQ-20 NOR-1 NOR-5 NOR-13 NOR-15 NOR-20 ARG-1 ARG-2 ARG-3 ARG-7 ARG-10 ARG-11 ARG-13 ARG-14 ARG-15 ARG-18 ARG-19 ARG-20 ALG-3 ALG-7 ALG-9 ALG-10 ALG-11 ALG-13 ALG-15 ALG-16 ALG-18 ALG-19 ALG-20 AUT-2 AUT-3 AUT-7 AUT-12 AUT-14 AUT-18 JOR-2 JOR-5 JOR-12 JOR-18 JOR-20 POR-1 POR-6 POR-7 POR-9 POR-10 POR-14 POR-15 POR-18 POR-19 COD-1 COD-3 COD-11 COD-14 COD-16 COD-20 UZB-1 UZB-7 UZB-8 UZB-18 UZB-19 COL-4 COL-15 COL-17 COL-19 ENG-1 ENG-2 ENG-3 ENG-4 ENG-5 ENG-6 ENG-7 ENG-8 ENG-10 ENG-11 ENG-13 ENG-14 ENG-15 ENG-16 ENG-17 ENG-18 ENG-19 ENG-20 CRO-1 CRO-3 CRO-7 CRO-15 CRO-16 CRO-17 CRO-19 CRO-20 GHA-1 GHA-2 GHA-15 GHA-16 PAN-5 PAN-9 PAN-11 PAN-12 PAN-13 PAN-14 PAN-15 PAN-16 PAN-17 PAN-18 PAN-19 PAN-20
-"""
-
-TOTAL_ALBUM = 980
+BONUS_SECTIONS = [["CC", "Bônus / Promocionais", "🥤", 12, "bonus"]]
 
 
-def all_codes():
-    return [f"{sec}-{n}" for sec in SECTIONS for n in range(1, 21)]
+def load_initial_owned_text() -> str:
+    """Lê a lista inicial do arquivo já existente na raiz, sem importar o módulo."""
+    src = Path(__file__).resolve().parents[1] / "figurinhas_copa_2026_app.py"
+    try:
+        text = src.read_text(encoding="utf-8")
+        match = re.search(r'INITIAL_OWNED_TEXT\s*=\s*"""(.*?)"""', text, flags=re.S)
+        if match:
+            return match.group(1).strip()
+    except Exception:
+        pass
+    return ""
 
 
-def initial_qty():
-    valid = set(all_codes())
-    return {code: 1 for code in INITIAL_OWNED_TEXT.split() if code in valid}
+HTML_TEMPLATE = r'''
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Controle de Figurinhas Copa 2026</title>
+<style>
+:root{--bg:#06101f;--panel:#0d1c30;--panel2:#122844;--text:#eef6ff;--muted:#9ab2ca;--line:rgba(255,255,255,.13);--green:#27d980;--red:#ff5d6c;--blue:#4da9ff;--gold:#ffd166;--purple:#a98bff}
+*{box-sizing:border-box}body{margin:0;color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:radial-gradient(circle at 20% 0%,rgba(39,217,128,.18),transparent 32%),radial-gradient(circle at 90% 12%,rgba(77,169,255,.22),transparent 34%),linear-gradient(135deg,#030812,var(--bg));min-height:100vh}.app{width:min(1360px,calc(100% - 24px));margin:auto;padding:20px 0 44px}.card,.panel,.section{border:1px solid var(--line);background:linear-gradient(180deg,rgba(18,40,68,.92),rgba(9,20,35,.94));border-radius:22px;box-shadow:0 18px 45px rgba(0,0,0,.35);backdrop-filter:blur(8px)}.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:16px;margin-bottom:16px}.card{padding:22px;position:relative;overflow:hidden}.card:after{content:"⚽";position:absolute;right:18px;bottom:-28px;font-size:130px;opacity:.075}h1{margin:0 0 8px;font-size:clamp(28px,4vw,52px);line-height:1.02;letter-spacing:-1.5px}p{margin:0;color:var(--muted);line-height:1.5}.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}.badge{border:1px solid var(--line);background:rgba(255,255,255,.055);border-radius:999px;padding:8px 10px;font-size:13px;color:#dbeaff}.notice{margin-top:14px;border:1px dashed rgba(255,209,102,.45);background:rgba(255,209,102,.08);color:#fff0c4;border-radius:14px;padding:10px 12px;font-size:13px}.percent{font-size:clamp(58px,8vw,94px);font-weight:950;letter-spacing:-5px;line-height:.9;background:linear-gradient(90deg,#fff,#b6ecff,#ffd166);-webkit-background-clip:text;background-clip:text;color:transparent}.bar{height:14px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid var(--line);overflow:hidden;margin-top:18px}.fill{height:100%;width:0%;border-radius:999px;background:linear-gradient(90deg,var(--red),var(--gold),var(--green));transition:width .55s ease;position:relative}.fill:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.48),transparent);animation:sweep 2s infinite}@keyframes sweep{from{transform:translateX(-100%)}to{transform:translateX(100%)}}.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:16px}.stat{border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.055);padding:15px}.label{font-size:13px;color:var(--muted);margin-bottom:6px}.value{font-size:30px;font-weight:950}.hint{font-size:12px;color:var(--muted);margin-top:4px}.panel{padding:16px;margin-bottom:16px}.toolbar{display:grid;grid-template-columns:1.2fr .8fr .7fr;gap:10px}input,select,textarea,button{font:inherit}input[type=text],select,textarea{width:100%;border:1px solid var(--line);background:#071527;color:var(--text);border-radius:14px;padding:12px;outline:none}textarea{min-height:90px;resize:vertical;line-height:1.35}input:focus,select:focus,textarea:focus{border-color:rgba(77,169,255,.75);box-shadow:0 0 0 4px rgba(77,169,255,.12)}button{border:0;border-radius:14px;padding:11px 13px;background:linear-gradient(180deg,#287cde,#1357a3);color:white;font-weight:800;cursor:pointer;box-shadow:0 10px 22px rgba(0,0,0,.25);transition:.15s}button:hover{filter:brightness(1.08);transform:translateY(-1px)}button:active{transform:translateY(1px)}.secondary{background:linear-gradient(180deg,#2b3e56,#1a293c)}.good{background:linear-gradient(180deg,#27d980,#168d56)}.warn{background:linear-gradient(180deg,#ffd166,#b67b12);color:#201400}.danger{background:linear-gradient(180deg,#ff5d6c,#b91e2c)}.purple{background:linear-gradient(180deg,#a98bff,#6746bf)}.small{padding:6px 9px;border-radius:10px;font-size:12px;box-shadow:none}.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}.switch{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:13px;margin-top:10px}.switch input{width:18px;height:18px;accent-color:var(--green)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.output{border:1px dashed rgba(255,255,255,.22);background:#06101f;border-radius:16px;padding:13px;min-height:90px;max-height:270px;overflow:auto;white-space:pre-wrap;color:#dcecff;font-size:13px;line-height:1.43}.sections{display:grid;gap:13px}.section{overflow:hidden}.section.complete{border-color:rgba(255,209,102,.7);box-shadow:0 0 0 1px rgba(255,209,102,.18),0 18px 42px rgba(255,209,102,.08)}.head{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:15px 17px;background:rgba(255,255,255,.045);border-bottom:1px solid var(--line);cursor:pointer}.title{font-size:18px;font-weight:950}.sub{font-size:13px;color:var(--muted);margin-top:4px}.mini{width:220px;height:8px;border-radius:999px;background:rgba(255,255,255,.1);overflow:hidden;margin-top:6px}.minifill{height:100%;background:linear-gradient(90deg,var(--blue),var(--green),var(--gold));width:0%;transition:.45s}.stickers{display:grid;grid-template-columns:repeat(auto-fill,minmax(94px,1fr));gap:10px;padding:13px}.sticker{min-height:112px;border:1px solid rgba(255,255,255,.13);border-radius:18px;background:rgba(255,255,255,.045);padding:9px 7px;text-align:center;display:flex;flex-direction:column;justify-content:space-between;align-items:center;position:relative;overflow:hidden;user-select:none}.sticker.missing{background:linear-gradient(180deg,rgba(255,93,108,.16),rgba(255,93,108,.04))}.sticker.owned{background:linear-gradient(180deg,rgba(39,217,128,.20),rgba(39,217,128,.05));border-color:rgba(39,217,128,.42)}.sticker.duplicate{background:linear-gradient(180deg,rgba(77,169,255,.24),rgba(77,169,255,.06));border-color:rgba(77,169,255,.52)}.foil:before{content:"";position:absolute;top:-65%;left:-140%;width:80%;height:230%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);transform:rotate(24deg);animation:foil 2.9s infinite}@keyframes foil{0%{left:-140%}55%{left:140%}100%{left:140%}}.code{font-weight:950;font-size:16px;position:relative;z-index:1}.type{font-size:11px;color:var(--muted);position:relative;z-index:1;line-height:1.15}.qty{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px solid var(--line);font-weight:950;position:relative;z-index:1}.actions{display:flex;gap:5px;position:relative;z-index:2}.empty{padding:30px 16px;border:1px dashed rgba(255,255,255,.18);border-radius:18px;text-align:center;color:var(--muted);background:rgba(255,255,255,.035)}.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(18px);opacity:0;pointer-events:none;background:#eef6ff;color:#06101f;border-radius:999px;padding:11px 16px;font-weight:900;box-shadow:0 18px 40px rgba(0,0,0,.35);transition:.2s;z-index:99}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.confetti{position:fixed;top:-20px;width:8px;height:12px;z-index:80;pointer-events:none;animation:fall 1.2s linear forwards}@keyframes fall{to{transform:translateY(105vh) rotate(720deg);opacity:.25}}@media(max-width:980px){.hero,.toolbar,.grid2{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.head{grid-template-columns:1fr}.mini{width:100%}}@media(max-width:560px){.app{width:calc(100% - 14px);padding-top:10px}.card,.panel{border-radius:18px;padding:14px}.stats{grid-template-columns:1fr}.stickers{grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:8px;padding:9px}.sticker{min-height:104px;border-radius:15px}.code{font-size:14px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="hero"><div class="card"><h1>Controle de Figurinhas<br>Copa do Mundo FIFA 2026</h1><p>Controle completo em HTML dentro do Streamlit: faltantes, repetidas, pacotinhos, exportações, backup e animações.</p><div class="badges"><span class="badge">980 figurinhas-base</span><span class="badge" id="badgeLoaded">JSON carregado</span><span class="badge">Salva no navegador</span><span class="badge">Lista para WhatsApp</span></div><div class="notice">Este painel usa o armazenamento local do navegador. Exporte backup JSON para migrar entre celular, computador ou navegador.</div></div><div class="card"><div class="percent" id="bigPercent">0%</div><p>Progresso geral do álbum</p><div class="bar"><div class="fill" id="mainProgress"></div></div><p id="progressText" style="margin-top:8px">0 de 980 figurinhas marcadas</p></div></div>
+  <div class="stats"><div class="stat"><div class="label">Tenho únicas</div><div class="value" id="ownedCount">0</div><div class="hint">Figurinhas diferentes</div></div><div class="stat"><div class="label">Faltam</div><div class="value" id="missingCount">980</div><div class="hint">Lista gerada abaixo</div></div><div class="stat"><div class="label">Repetidas</div><div class="value" id="dupeCount">0</div><div class="hint">Cópias extras</div></div><div class="stat"><div class="label">Seções completas</div><div class="value" id="completeSections">0</div><div class="hint">Times/seções</div></div><div class="stat"><div class="label">Pacotinhos mínimos</div><div class="value" id="idealPacks">140</div><div class="hint">Sem considerar repetidas</div></div></div>
+  <div class="panel"><div class="toolbar"><input id="searchBox" type="text" placeholder="Buscar: BRA 14, Brasil, FWC, 1..."><select id="filterBox"><option value="all">Mostrar tudo</option><option value="missing">Só faltantes</option><option value="owned">Só tenho</option><option value="duplicates">Só repetidas</option><option value="complete_sections">Seções completas</option><option value="incomplete_sections">Seções incompletas</option><option value="not_started">Seções não iniciadas</option></select><select id="sortBox"><option value="album">Ordem do álbum</option><option value="alpha">Ordem alfabética</option><option value="progress_asc">Menor progresso primeiro</option><option value="progress_desc">Maior progresso primeiro</option></select></div><label class="switch"><input id="includeBonus" type="checkbox"> Incluir seção opcional de 12 figurinhas bônus/promocionais</label><div class="btns"><button type="button" class="good" onclick="App.generateMissing()">Gerar lista de faltantes</button><button type="button" class="purple" onclick="App.copyOutput()">Copiar para WhatsApp</button><button type="button" class="secondary" onclick="App.exportCSV()">Exportar CSV</button><button type="button" class="secondary" onclick="App.exportBackup()">Exportar backup JSON</button><button type="button" class="secondary" onclick="document.getElementById('fileInput').click()">Importar backup</button><button type="button" class="secondary" onclick="App.restoreEmbedded()">Restaurar JSON inicial</button><button type="button" class="warn" onclick="window.print()">Imprimir / PDF</button><button type="button" class="danger" onclick="App.resetAll()">Zerar controle</button><input id="fileInput" type="file" accept=".json,application/json" style="display:none"></div><div class="grid2"><div><textarea id="batchInput" placeholder="Cole aqui as figurinhas de um pacotinho ou lote. Exemplos:\nBRA 14, ARG 10, FWC 3, MEX 1\nou:\nBRA14 ARG10 FWC3 MEX1"></textarea><div class="btns"><button type="button" class="good" onclick="App.addBatch()">Adicionar lote/pacotinho</button><button type="button" class="secondary" onclick="document.getElementById('batchInput').value=''">Limpar campo</button></div></div><div class="output" id="outputBox">Quando você gerar a lista ou lançar um pacotinho, o resultado aparece aqui.</div></div></div>
+  <div class="sections" id="sections"></div>
+</div><div class="toast" id="toast">Salvo</div>
+<script>
+(function(){"use strict";
+var STORAGE_KEY="controle_figurinhas_copa_2026_html_streamlit_v1";
+var baseSections=__SECTIONS__.map(function(x){return{code:x[0],name:x[1],emoji:x[2],count:x[3],kind:x[4]};});
+var bonusSections=__BONUS__.map(function(x){return{code:x[0],name:x[1],emoji:x[2],count:x[3],kind:x[4]};});
+var INITIAL_OWNED_TEXT=__INITIAL_OWNED__;
+var DEFAULT_STATE={qty:{},includeBonus:false,collapsed:{}};
+INITIAL_OWNED_TEXT.split(/\s+/).forEach(function(c){if(c){DEFAULT_STATE.qty[c]=1;}});
+var state=JSON.parse(JSON.stringify(DEFAULT_STATE));
+function el(id){return document.getElementById(id);}function toast(msg){var t=el("toast");t.textContent=msg;t.className="toast show";clearTimeout(window.__toast);window.__toast=setTimeout(function(){t.className="toast";},1500);}function activeSections(){return el("includeBonus")&&el("includeBonus").checked?baseSections.concat(bonusSections):baseSections.slice();}function stickerId(s,n){return s.code+"-"+n;}function stickerCode(s,n){return s.code+" "+n;}function getQty(id){return Number(state.qty[id]||0);}function setQty(id,q){q=Number(q||0);if(q<=0){delete state.qty[id];}else{state.qty[id]=Math.min(99,q);}}function stickerType(s,n){if(s.kind==="intro")return"Especial / foil";if(s.kind==="bonus")return"Bônus opcional";if(s.kind==="team"&&n===1)return"Escudo / foil";if(s.kind==="team"&&n===13)return"Foto da seleção";return"Jogador";}function isFoil(s,n){return s.kind==="intro"||(s.kind==="team"&&n===1);}function sectionStats(s){var owned=0,dupes=0;for(var n=1;n<=s.count;n++){var q=getQty(stickerId(s,n));if(q>0)owned++;if(q>1)dupes+=q-1;}return{total:s.count,owned:owned,missing:s.count-owned,dupes:dupes,pct:s.count?owned/s.count:0};}function globalStats(){var ss=activeSections(),total=0,owned=0,dupes=0,complete=0;for(var i=0;i<ss.length;i++){var st=sectionStats(ss[i]);total+=st.total;owned+=st.owned;dupes+=st.dupes;if(st.missing===0)complete++;}return{total:total,owned:owned,missing:total-owned,dupes:dupes,complete:complete,pct:total?owned/total:0};}function normalize(text){text=String(text||"");try{text=text.normalize("NFD").replace(/[\u0300-\u036f]/g,"");}catch(e){}return text.toUpperCase().replace(/\s+/g," ").trim();}function load(){try{var raw=localStorage.getItem(STORAGE_KEY);if(raw){var p=JSON.parse(raw);state.qty=p.qty||{};state.includeBonus=!!p.includeBonus;state.collapsed=p.collapsed||{};}else{state=JSON.parse(JSON.stringify(DEFAULT_STATE));localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}}catch(e){state=JSON.parse(JSON.stringify(DEFAULT_STATE));}el("includeBonus").checked=!!state.includeBonus;el("badgeLoaded").textContent=Object.keys(DEFAULT_STATE.qty).length+" já carregadas do JSON";}function save(silent){try{state.includeBonus=!!el("includeBonus").checked;localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}catch(e){}if(!silent)toast("Salvo");}
+function updateStats(){var gs=globalStats();el("ownedCount").textContent=gs.owned;el("missingCount").textContent=gs.missing;el("dupeCount").textContent=gs.dupes;el("completeSections").textContent=gs.complete;el("idealPacks").textContent=Math.ceil(gs.missing/7);el("bigPercent").textContent=Math.round(gs.pct*100)+"%";el("progressText").textContent=gs.owned+" de "+gs.total+" figurinhas marcadas";el("mainProgress").style.width=(gs.pct*100).toFixed(2)+"%";}function sectionPassesFilter(s,f){var st=sectionStats(s);if(f==="complete_sections")return st.missing===0;if(f==="incomplete_sections")return st.missing>0;if(f==="not_started")return st.owned===0;return true;}function stickerPassesFilter(q,f){if(f==="missing")return q===0;if(f==="owned")return q>0;if(f==="duplicates")return q>1;return true;}function getSortedSections(){var arr=activeSections();var sort=el("sortBox").value;if(sort==="alpha")arr.sort(function(a,b){return a.name.localeCompare(b.name,"pt-BR");});else if(sort==="progress_asc")arr.sort(function(a,b){return sectionStats(a).pct-sectionStats(b).pct;});else if(sort==="progress_desc")arr.sort(function(a,b){return sectionStats(b).pct-sectionStats(a).pct;});return arr;}
+function render(){updateStats();var container=el("sections"),query=normalize(el("searchBox").value),filter=el("filterBox").value;container.innerHTML="";var shown=0,sections=getSortedSections();for(var i=0;i<sections.length;i++){var s=sections[i];if(!sectionPassesFilter(s,filter))continue;var st=sectionStats(s),cards=[];for(var n=1;n<=s.count;n++){var id=stickerId(s,n),q=getQty(id),code=stickerCode(s,n),type=stickerType(s,n),hay=normalize(code+" "+code.replace(" ","")+" "+s.code+" "+s.name+" "+type+" "+n);if(query&&hay.indexOf(query)===-1)continue;if(!stickerPassesFilter(q,filter))continue;cards.push({id:id,n:n,q:q,code:code,type:type,foil:isFoil(s,n)});}if(query&&cards.length===0)continue;if((filter==="missing"||filter==="owned"||filter==="duplicates")&&cards.length===0)continue;shown++;var wrap=document.createElement("div");wrap.className="section"+(st.missing===0?" complete":"");var head=document.createElement("div");head.className="head";head.setAttribute("data-section",s.code);head.innerHTML='<div><div class="title">'+s.emoji+' '+s.code+' — '+s.name+'</div><div class="sub">'+st.owned+'/'+st.total+' marcadas · '+st.missing+' faltando · '+st.dupes+' repetidas</div></div><div><strong>'+Math.round(st.pct*100)+'%</strong><div class="mini"><div class="minifill" style="width:'+(st.pct*100).toFixed(2)+'%"></div></div></div>';head.onclick=function(){var c=this.getAttribute("data-section");state.collapsed[c]=!state.collapsed[c];save(true);render();};var grid=document.createElement("div");grid.className="stickers";if(state.collapsed[s.code])grid.style.display="none";if(cards.length===0){var empty=document.createElement("div");empty.className="empty";empty.textContent="Nenhuma figurinha encontrada nesta seção para o filtro atual.";grid.appendChild(empty);}for(var k=0;k<cards.length;k++){var c=cards[k],status=c.q===0?"missing":c.q===1?"owned":"duplicate",card=document.createElement("div");card.className="sticker "+status+(c.foil?" foil":"");card.innerHTML='<div class="code">'+c.code+'</div><div class="type">'+c.type+'</div><div class="qty">'+c.q+'</div><div class="actions"><button type="button" class="small secondary" data-action="minus" data-id="'+c.id+'">−</button><button type="button" class="small good" data-action="plus" data-id="'+c.id+'">+</button></div>';grid.appendChild(card);}wrap.appendChild(head);wrap.appendChild(grid);container.appendChild(wrap);}if(shown===0)container.innerHTML='<div class="empty">Nenhum resultado encontrado para a busca/filtro atual.</div>';}
+function celebrate(){var colors=["#27d980","#ff5d6c","#4da9ff","#ffd166","#a98bff"];for(var i=0;i<70;i++){var p=document.createElement("div");p.className="confetti";p.style.left=(Math.random()*100)+"vw";p.style.background=colors[Math.floor(Math.random()*colors.length)];p.style.animationDelay=(Math.random()*.35)+"s";document.body.appendChild(p);setTimeout((function(x){return function(){if(x&&x.parentNode)x.parentNode.removeChild(x);};})(p),1500);}}function changeSticker(id,delta){var code=id.split("-")[0],section=null,sections=activeSections();for(var i=0;i<sections.length;i++){if(sections[i].code===code)section=sections[i];}var beforeComplete=section?sectionStats(section).missing===0:false;setQty(id,getQty(id)+delta);save(true);if(section&&!beforeComplete&&sectionStats(section).missing===0){celebrate();toast(section.code+" completo!");}else toast("Atualizado");render();}
+function missingText(){var gs=globalStats(),lines=[];lines.push("Álbum Copa do Mundo FIFA 2026 — faltam "+gs.missing+" de "+gs.total+" figurinhas ("+Math.round(gs.pct*100)+"% completo).");lines.push("");var sections=activeSections();for(var i=0;i<sections.length;i++){var s=sections[i],miss=[];for(var n=1;n<=s.count;n++){if(getQty(stickerId(s,n))===0)miss.push(n);}if(miss.length)lines.push(s.code+" — "+s.name+": "+miss.join(", "));}if(gs.missing===0)lines.push("Álbum completo! 🏆");return lines.join("\n");}function dupesText(){var lines=["","Repetidas:"],any=false,sections=activeSections();for(var i=0;i<sections.length;i++){var s=sections[i],d=[];for(var n=1;n<=s.count;n++){var q=getQty(stickerId(s,n));if(q>1)d.push(s.code+" "+n+" (+"+(q-1)+")");}if(d.length){any=true;lines.push(s.code+" — "+s.name+": "+d.join(", "));}}if(!any)lines.push("Nenhuma repetida registrada.");return lines.join("\n");}function generateMissing(){el("outputBox").textContent=missingText()+dupesText();toast("Lista gerada");}function copyOutput(){var text=el("outputBox").textContent||missingText();if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(function(){toast("Copiado");}).catch(function(){el("outputBox").textContent=text+"\n\nNão consegui copiar automaticamente. Selecione e copie manualmente.";});}else el("outputBox").textContent=text+"\n\nSeu navegador não permite cópia automática. Selecione e copie manualmente.";}
+function allRows(){var rows=[],sections=activeSections();for(var i=0;i<sections.length;i++){var s=sections[i];for(var n=1;n<=s.count;n++){var id=stickerId(s,n),q=getQty(id);rows.push({codigo:stickerCode(s,n),secao:s.code,nome:s.name,numero:n,tipo:stickerType(s,n),quantidade:q,status:q===0?"faltando":q===1?"tenho":"repetida"});}}return rows;}function download(filename,content,type){var blob=new Blob([content],{type:type||"text/plain"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=filename;document.body.appendChild(a);a.click();setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(url);},0);}function csvEscape(v){return '"'+String(v).replace(/"/g,'""')+'"';}function exportCSV(){var rows=allRows(),out=["codigo;secao;nome_secao;numero;tipo;quantidade;status"];for(var i=0;i<rows.length;i++){var r=rows[i];out.push([r.codigo,r.secao,r.nome,r.numero,r.tipo,r.quantidade,r.status].map(csvEscape).join(";"));}download("controle_figurinhas_copa_2026.csv",out.join("\n"),"text/csv;charset=utf-8");toast("CSV exportado");}function exportBackup(){save(true);var payload={exported_at:new Date().toISOString(),app:"controle_figurinhas_copa_2026_html_streamlit",version:3,state:state};download("backup_controle_figurinhas_copa_2026.json",JSON.stringify(payload,null,2),"application/json");toast("Backup exportado");}
+function importBackupFile(file){var reader=new FileReader();reader.onload=function(){try{var parsed=JSON.parse(reader.result),imported=parsed.state||parsed;if(!imported.qty)throw new Error("Backup inválido");state.qty=imported.qty||{};state.includeBonus=!!imported.includeBonus;state.collapsed=imported.collapsed||{};el("includeBonus").checked=!!state.includeBonus;save(true);render();toast("Backup importado");}catch(e){alert("Não consegui importar. Verifique se o arquivo é um backup JSON deste controle.");}};reader.readAsText(file);}function parseCodes(text){text=normalize(text).replace(/[;,\n\r\t]+/g," ").replace(/([A-Z]{2,4})(\d{1,2})/g,"$1 $2").replace(/\s+/g," ").trim();var tokens=text?text.split(" "):[],found=[];for(var i=0;i<tokens.length;i++){if(/^[A-Z]{2,4}$/.test(tokens[i])&&/^\d{1,2}$/.test(tokens[i+1]||"")){found.push([tokens[i],Number(tokens[i+1])]);i++;}}return found;}function addBatch(){var pairs=parseCodes(el("batchInput").value);if(!pairs.length){el("outputBox").textContent="Não identifiquei códigos. Use exemplos como: BRA 14, ARG 10, FWC 3.";return;}var sections=activeSections(),map={};for(var i=0;i<sections.length;i++)map[sections[i].code]=sections[i];var added=[],invalid=[],dupes=[];for(var j=0;j<pairs.length;j++){var code=pairs[j][0],n=pairs[j][1],s=map[code];if(!s||n<1||n>s.count){invalid.push(code+" "+n);continue;}var id=stickerId(s,n),before=getQty(id);setQty(id,before+1);added.push(code+" "+n);if(before>=1)dupes.push(code+" "+n);}save(true);render();var gs=globalStats(),lines=[];lines.push("Lote processado: "+added.length+" figurinha(s) adicionada(s).");if(dupes.length)lines.push("Viraram repetidas: "+dupes.join(", "));if(invalid.length)lines.push("Não reconhecidas: "+invalid.join(", "));lines.push("");lines.push("Resumo atual: "+gs.owned+"/"+gs.total+" únicas, "+gs.missing+" faltando, "+gs.dupes+" repetidas.");el("outputBox").textContent=lines.join("\n");toast("Lote adicionado");}
+function restoreEmbedded(){if(!confirm("Deseja restaurar exatamente as figurinhas do JSON inicial? As alterações feitas depois serão substituídas."))return;state=JSON.parse(JSON.stringify(DEFAULT_STATE));el("includeBonus").checked=!!state.includeBonus;save(true);render();el("outputBox").textContent="JSON inicial restaurado. Estado: "+globalStats().owned+"/"+globalStats().total+" únicas.";toast("JSON restaurado");}function resetAll(){if(!confirm("Tem certeza que deseja zerar todo o controle?"))return;state.qty={};state.collapsed={};save(true);render();el("outputBox").textContent="Controle zerado.";toast("Controle zerado");}function bind(){el("searchBox").oninput=render;el("filterBox").onchange=render;el("sortBox").onchange=render;el("includeBonus").onchange=function(){save(true);render();};el("fileInput").onchange=function(e){var file=e.target.files&&e.target.files[0];if(file)importBackupFile(file);e.target.value="";};el("sections").onclick=function(ev){var t=ev.target;if(!t||!t.getAttribute)return;var action=t.getAttribute("data-action"),id=t.getAttribute("data-id");if(action&&id){ev.stopPropagation();changeSticker(id,action==="plus"?1:-1);}};}window.App={generateMissing:generateMissing,copyOutput:copyOutput,exportCSV:exportCSV,exportBackup:exportBackup,addBatch:addBatch,resetAll:resetAll,restoreEmbedded:restoreEmbedded};document.addEventListener("DOMContentLoaded",function(){load();bind();render();toast("HTML completo carregado");});})();
+</script></body></html>
+'''
 
 
-def get_qty():
-    if "qty" not in st.session_state:
-        st.session_state.qty = initial_qty()
-    return st.session_state.qty
+def build_html() -> str:
+    html = HTML_TEMPLATE
+    html = html.replace("__SECTIONS__", json.dumps(SECTIONS, ensure_ascii=False))
+    html = html.replace("__BONUS__", json.dumps(BONUS_SECTIONS, ensure_ascii=False))
+    html = html.replace("__INITIAL_OWNED__", json.dumps(load_initial_owned_text(), ensure_ascii=False))
+    return html
 
-
-def set_qty(code, value):
-    qty = get_qty()
-    value = int(value)
-    if value <= 0:
-        qty.pop(code, None)
-    else:
-        qty[code] = min(value, 99)
-
-
-def stats():
-    qty = get_qty()
-    codes = all_codes()
-    owned = sum(1 for c in codes if int(qty.get(c, 0)) > 0)
-    duplicates = sum(max(0, int(qty.get(c, 0)) - 1) for c in codes)
-    missing = TOTAL_ALBUM - owned
-    complete_sections = 0
-    for sec in SECTIONS:
-        if all(int(qty.get(f"{sec}-{n}", 0)) > 0 for n in range(1, 21)):
-            complete_sections += 1
-    pct = owned / TOTAL_ALBUM if TOTAL_ALBUM else 0
-    return owned, missing, duplicates, complete_sections, pct
-
-
-def missing_text():
-    qty = get_qty()
-    owned, missing, duplicates, complete_sections, pct = stats()
-    lines = [
-        f"Álbum Copa do Mundo FIFA 2026 — faltam {missing} de {TOTAL_ALBUM} figurinhas ({pct:.1%} completo).",
-        "",
-    ]
-    for sec, name in SECTIONS.items():
-        nums = [str(n) for n in range(1, 21) if int(qty.get(f"{sec}-{n}", 0)) == 0]
-        if nums:
-            lines.append(f"{sec} — {name}: " + ", ".join(nums))
-    if missing == 0:
-        lines.append("Álbum completo! 🏆")
-    return "\n".join(lines)
-
-
-def duplicates_text():
-    qty = get_qty()
-    lines = ["Repetidas para troca:"]
-    found = False
-    for sec, name in SECTIONS.items():
-        reps = []
-        for n in range(1, 21):
-            code = f"{sec}-{n}"
-            q = int(qty.get(code, 0))
-            if q > 1:
-                reps.append(f"{code} (+{q - 1})")
-        if reps:
-            found = True
-            lines.append(f"{sec} — {name}: " + ", ".join(reps))
-    if not found:
-        lines.append("Nenhuma repetida registrada.")
-    return "\n".join(lines)
-
-
-def export_json():
-    return json.dumps(
-        {
-            "exported_at": datetime.utcnow().isoformat() + "Z",
-            "app": "figurinhas_copa_2026_streamlit",
-            "version": 2,
-            "state": {
-                "qty": {k: int(v) for k, v in get_qty().items() if int(v) > 0},
-                "includeBonus": False,
-                "collapsed": {},
-                "lastCompleted": {},
-            },
-        },
-        ensure_ascii=False,
-        indent=2,
-    )
-
-
-def export_csv():
-    out = io.StringIO()
-    writer = csv.writer(out, delimiter=";")
-    writer.writerow(["codigo", "secao", "nome_secao", "numero", "quantidade", "status"])
-    qty = get_qty()
-    for sec, name in SECTIONS.items():
-        for n in range(1, 21):
-            code = f"{sec}-{n}"
-            q = int(qty.get(code, 0))
-            status = "faltando" if q == 0 else "tenho" if q == 1 else "repetida"
-            writer.writerow([code, sec, name, n, q, status])
-    return out.getvalue().encode("utf-8-sig")
-
-
-def parse_batch(text):
-    text = text.upper()
-    text = re.sub(r"([A-Z]{2,4})\s*[- ]?\s*(\d{1,2})", r"\1-\2", text)
-    return re.findall(r"[A-Z]{2,4}-\d{1,2}", text)
-
-
-st.success("✅ App de figurinhas carregado corretamente.")
 
 st.markdown(
     """
     <style>
-    .block-container { padding-top: 1rem; max-width: 100%; }
-    .hero {
-        padding: 22px;
-        border-radius: 22px;
-        background: linear-gradient(135deg, #06101f, #122844);
-        border: 1px solid rgba(255,255,255,.16);
-        margin-bottom: 14px;
-    }
-    .hero h1 { margin: 0 0 8px 0; font-size: 38px; line-height: 1.05; color: white; }
-    .hero p { color: #c5d6e8; font-size: 16px; }
-    .pill { display:inline-block; padding:7px 11px; border-radius:999px; margin:8px 6px 0 0; border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.07); color: white; }
+    .block-container { padding: 0.25rem 0.5rem 1rem 0.5rem; max-width: 100%; }
+    header, footer { visibility: hidden; }
     </style>
-    <div class="hero">
-        <h1>⚽ Controle de Figurinhas — Copa do Mundo FIFA 2026</h1>
-        <p>App independente no Streamlit, iniciado com o backup das figurinhas já marcadas.</p>
-        <span class="pill">980 figurinhas-base</span>
-        <span class="pill">443 carregadas inicialmente</span>
-        <span class="pill">Exporta JSON/CSV</span>
-        <span class="pill">Lista para WhatsApp</span>
-    </div>
     """,
     unsafe_allow_html=True,
 )
 
-owned, missing, duplicates, complete_sections, pct = stats()
-c1, c2, c3, c4, c5 = st.columns(5)
-c1.metric("Tenho únicas", owned)
-c2.metric("Faltam", missing)
-c3.metric("Repetidas", duplicates)
-c4.metric("Seções completas", complete_sections)
-c5.metric("Progresso", f"{pct:.1%}")
-st.progress(pct)
-
 with st.sidebar:
-    st.title("⚽ Figurinhas")
-    section = st.selectbox(
-        "Seleção / seção",
-        list(SECTIONS.keys()),
-        format_func=lambda sec: f"{sec} — {SECTIONS[sec]}",
-    )
+    st.title("⚽ Álbum Copa 2026")
+    height = st.slider("Altura do painel", 900, 2600, 1800, 100)
+    st.info("Versão HTML completa incorporada ao Streamlit.")
 
-    st.divider()
-    batch = st.text_area("Adicionar pacotinho/lote", placeholder="Ex.: BRA 14, ARG 10, FWC 3")
-    if st.button("Adicionar lote", type="primary", use_container_width=True):
-        valid_codes = set(all_codes())
-        added = 0
-        invalid = []
-        for code in parse_batch(batch):
-            if code in valid_codes:
-                set_qty(code, int(get_qty().get(code, 0)) + 1)
-                added += 1
-            else:
-                invalid.append(code)
-        if added:
-            st.success(f"{added} figurinha(s) adicionada(s).")
-        if invalid:
-            st.warning("Não reconhecidas: " + ", ".join(invalid))
-        st.rerun()
-
-    st.divider()
-    uploaded = st.file_uploader("Importar backup JSON", type=["json"])
-    if uploaded is not None:
-        try:
-            data = json.loads(uploaded.read().decode("utf-8"))
-            imported = data.get("state", data).get("qty", {})
-            valid_codes = set(all_codes())
-            st.session_state.qty = {
-                k: int(v) for k, v in imported.items() if k in valid_codes and int(v) > 0
-            }
-            st.success("Backup importado.")
-            st.rerun()
-        except Exception as exc:
-            st.error(f"Não consegui importar o JSON: {exc}")
-
-    if st.button("Restaurar JSON inicial", use_container_width=True):
-        st.session_state.qty = initial_qty()
-        st.rerun()
-
-    if st.button("Zerar controle", use_container_width=True):
-        st.session_state.qty = {}
-        st.rerun()
-
-st.subheader(f"{section} — {SECTIONS[section]}")
-cols = st.columns(5)
-for idx, n in enumerate(range(1, 21)):
-    code = f"{section}-{n}"
-    with cols[idx % 5]:
-        current = int(get_qty().get(code, 0))
-        new_value = st.number_input(
-            code,
-            min_value=0,
-            max_value=99,
-            value=current,
-            step=1,
-            key=f"qty_{code}",
-        )
-        set_qty(code, int(new_value))
-
-tab_missing, tab_duplicates, tab_exports = st.tabs(["📌 Faltantes", "🔁 Repetidas", "⬇️ Exportações"])
-
-with tab_missing:
-    st.text_area("Lista pronta para copiar/WhatsApp", missing_text(), height=460)
-
-with tab_duplicates:
-    st.text_area("Lista de repetidas para troca", duplicates_text(), height=420)
-
-with tab_exports:
-    st.download_button(
-        "Baixar backup JSON",
-        data=export_json(),
-        file_name="backup_controle_figurinhas_copa_2026.json",
-        mime="application/json",
-        use_container_width=True,
-    )
-    st.download_button(
-        "Baixar CSV",
-        data=export_csv(),
-        file_name="controle_figurinhas_copa_2026.csv",
-        mime="text/csv",
-        use_container_width=True,
-    )
+components.html(build_html(), height=height, scrolling=True)
